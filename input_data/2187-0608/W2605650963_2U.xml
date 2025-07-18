@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="363758">
+        <name>/data/2187-0608/W2605650963.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="141" failedRules="5" passedChecks="221517" failedChecks="11">
+          <rule specification="ISO 19005-2:2011" clause="6.9" testNumber="3" status="failed" failedChecks="1">
+            <description>If an optional content configuration dictionary contains the Order key, the array which is the value of this Order key shall contain references to all OCGs in the conforming file</description>
+            <object>PDOCConfig</object>
+            <test>OCGsNotContainedInOrder == null</test>
+            <check status="failed">
+              <context>root/document[0]/OCProperties[0]/D[0]</context>
+              <errorMessage>Optional content group(s) Headers/Footers not present in the Order entry of the optional content configuration dictionary</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.9" testNumber="1" status="failed" failedChecks="1">
+            <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the value of the Configs key in the OCProperties dictionary, shall contain the Name key</description>
+            <object>PDOCConfig</object>
+            <test>Name != null &amp;&amp; Name.length() &gt; 0</test>
+            <check status="failed">
+              <context>root/document[0]/OCProperties[0]/D[0]</context>
+              <errorMessage>Missing or empty Name entry of the optional content configuration dictionary</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](138 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.3.2" testNumber="1" status="failed" failedChecks="6">
+            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
+            <object>PDAnnot</object>
+            <test>Subtype == "Popup" || F != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[13](73 0 obj PDPage)/annots[0](158 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](73 0 obj PDPage)/annots[1](159 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](73 0 obj PDPage)/annots[2](160 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](73 0 obj PDPage)/annots[3](161 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](77 0 obj PDPage)/annots[0](163 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](81 0 obj PDPage)/annots[0](165 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="2">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[13](73 0 obj PDPage)/contentStream[0](194 0 obj PDContentStream)/operators[188]/font[0](IABVKV+TimesNewRoman)/DescendantFonts[0](IABVKV+TimesNewRoman)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](77 0 obj PDPage)/contentStream[0](174 0 obj PDContentStream)/operators[3358]/font[0](JGUQFT+TimesNewRoman,Italic)/DescendantFonts[0](JGUQFT+TimesNewRoman,Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752675567247" finish="1752675569968">00:00:02.721</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752675567141" finish="1752675570005">00:00:02.864</duration>
+  </batchSummary>
+</report>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="453446">
+        <name>/data/2521-0505/W4407420235.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="98" failedRules="8" passedChecks="18035" failedChecks="24">
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.1" testNumber="1" status="failed" failedChecks="2" tags="font">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/operators[201]/font[0](TimesNewRomanPS-BoldMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/operators[527]/font[0](CambriaMath)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="3" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[0](55 0 obj SETable Table)/K[0](56 0 obj SETHead THead)/K[0](57 0 obj SETR TR)/K[0](58 0 obj SETH TH)/K[1](62 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[0](55 0 obj SETable Table)/K[0](56 0 obj SETHead THead)/K[0](57 0 obj SETR TR)/K[2](99 0 obj SETH TH)/K[1](101 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[41](294 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="1" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[0](30 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="4" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[0](55 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[20](158 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[22](209 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](50 0 obj PDStructTreeRoot)/K[0](54 0 obj SEDocument Document)/K[24](249 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="2" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/operators[20]/font[0](QZXDES+Cambria)/DescendantFonts[0](QZXDES+Cambria)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/operators[243]/font[0](QZXDES+Cambria-Italic)/DescendantFonts[0](QZXDES+Cambria-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](314 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="1" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[0](30 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="10" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[79]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[81]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[81]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[83]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[85]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[85]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[87]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[87]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[87]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](344 0 obj PDSemanticContentStream)/content[89]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752681205103" finish="1752681207047">00:00:01.944</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752681205013" finish="1752681207107">00:00:02.094</duration>
+  </batchSummary>
+</report>

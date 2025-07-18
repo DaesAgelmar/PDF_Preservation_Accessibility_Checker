@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="1443842">
+        <name>/data/1988-2890/W4383907556.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="140" failedRules="6" passedChecks="202134" failedChecks="185">
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="3">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[1056]/font[0](HTXSRT+TimesNewRomanPS-BoldItalicMT)/DescendantFonts[0](HTXSRT+TimesNewRomanPS-BoldItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](7 0 obj PDPage)/contentStream[0](8 0 obj PDContentStream)/operators[64]/font[0](HTXSRT+TimesNewRomanPSMT)/DescendantFonts[0](HTXSRT+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](69 0 obj PDPage)/contentStream[0](70 0 obj PDContentStream)/operators[719]/font[0](HTXSRT+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](HTXSRT+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="4" status="failed" failedChecks="7">
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, or if a PDF/A OutputIntent is present</description>
+            <object>PDDeviceGray</object>
+            <test>gOutputCS != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/contentStream[0]/operators[55]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](7 0 obj PDPage)/contentStream[0](8 0 obj PDContentStream)/operators[77]/xObject[0](10 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](7 0 obj PDPage)/contentStream[0](8 0 obj PDContentStream)/operators[127]/xObject[0](12 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](14 0 obj PDPage)/contentStream[0](15 0 obj PDContentStream)/operators[313]/xObject[0](17 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](21 0 obj PDPage)/contentStream[0](22 0 obj PDContentStream)/operators[342]/xObject[0](32 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](34 0 obj PDPage)/contentStream[0](35 0 obj PDContentStream)/operators[75]/xObject[0](37 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](39 0 obj PDPage)/contentStream[0](40 0 obj PDContentStream)/operators[108]/xObject[0](42 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="2" status="failed" failedChecks="8">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isValueTypeCorrect == true</test>
+            <check status="failed">
+              <context>root/indirectObjects[179](10 0)/directObject[0]/metadata[0](9 0 obj PDMetadata)/XMPPackage[0]/Properties[1](http://ns.adobe.com/photoshop/1.0/ - photoshop:ColorMode)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[179](10 0)/directObject[0]/metadata[0](9 0 obj PDMetadata)/XMPPackage[0]/Properties[2](http://ns.adobe.com/photoshop/1.0/ - photoshop:ICCProfile)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[179](10 0)/directObject[0]/metadata[0](9 0 obj PDMetadata)/XMPPackage[0]/Properties[9](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[11](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:DerivedFrom)</context>
+              <errorMessage>XMP property does not correspond to type resourceref</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[13](http://ns.adobe.com/illustrator/1.0/ - illustrator:StartupProfile)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[14](http://ns.adobe.com/xap/1.0/t/pg/ - xmpTPg:HasVisibleOverprint)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[15](http://ns.adobe.com/xap/1.0/t/pg/ - xmpTPg:HasVisibleTransparency)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[19](http://ns.adobe.com/xap/1.0/t/pg/ - xmpTPg:SwatchGroups)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.3.2" testNumber="1" status="failed" failedChecks="159">
+            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
+            <object>PDAnnot</object>
+            <test>Subtype == "Popup" || F != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/annots[0](1142 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/annots[1](1143 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/annots[2](1144 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/annots[3](1145 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/annots[4](1146 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1113 0 obj PDPage)/annots[5](1147 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[0](93 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](7 0 obj PDPage)/annots[0](100 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](14 0 obj PDPage)/annots[0](103 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](21 0 obj PDPage)/annots[0](106 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](34 0 obj PDPage)/annots[0](109 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](39 0 obj PDPage)/annots[0](112 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](44 0 obj PDPage)/annots[0](115 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](51 0 obj PDPage)/annots[0](119 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[0](123 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[1](159 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[2](150 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[3](153 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[4](162 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[5](152 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[6](158 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[7](151 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[8](157 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[9](154 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[10](160 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[11](163 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[12](155 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](57 0 obj PDPage)/annots[13](164 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[0](126 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[1](185 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[2](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[3](176 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[4](194 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[5](177 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[6](182 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[7](188 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[8](184 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[9](186 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[10](189 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[11](174 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[12](183 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[13](190 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[14](191 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[15](175 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[16](192 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[17](193 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[18](178 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[19](179 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[20](180 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[21](181 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[22](217 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[23](209 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[24](214 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[25](201 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[26](218 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[27](204 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[28](195 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[29](202 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[30](199 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[31](196 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[32](216 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[33](221 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[34](210 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[35](208 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[36](211 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[37](212 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[38](215 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](60 0 obj PDPage)/annots[39](200 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[0](129 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[1](252 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[2](253 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[3](270 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[4](264 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[5](266 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[6](271 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[7](262 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[8](258 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[9](284 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[10](267 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[11](256 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[12](268 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[13](269 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[14](285 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[15](280 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[16](255 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[17](263 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[18](273 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[19](272 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[20](274 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[21](275 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[22](279 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[23](276 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[24](257 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[25](265 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[26](277 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[27](283 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[28](259 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[29](278 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[30](281 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](63 0 obj PDPage)/annots[31](282 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="1" status="failed" failedChecks="7">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isPredefinedInXMP2005 == true || isDefinedInMainPackage == true || isDefinedInCurrentPackage == true</test>
+            <check status="failed">
+              <context>root/indirectObjects[179](10 0)/directObject[0]/metadata[0](9 0 obj PDMetadata)/XMPPackage[0]/Properties[1](http://ns.adobe.com/photoshop/1.0/ - photoshop:ColorMode)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[179](10 0)/directObject[0]/metadata[0](9 0 obj PDMetadata)/XMPPackage[0]/Properties[2](http://ns.adobe.com/photoshop/1.0/ - photoshop:ICCProfile)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[179](10 0)/directObject[0]/metadata[0](9 0 obj PDMetadata)/XMPPackage[0]/Properties[9](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[13](http://ns.adobe.com/illustrator/1.0/ - illustrator:StartupProfile)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[14](http://ns.adobe.com/xap/1.0/t/pg/ - xmpTPg:HasVisibleOverprint)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[15](http://ns.adobe.com/xap/1.0/t/pg/ - xmpTPg:HasVisibleTransparency)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[770](1166 0)/directObject[0]/metadata[0](1137 0 obj PDMetadata)/XMPPackage[0]/Properties[19](http://ns.adobe.com/xap/1.0/t/pg/ - xmpTPg:SwatchGroups)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](88 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752678295301" finish="1752678298509">00:00:03.208</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752678295162" finish="1752678298574">00:00:03.412</duration>
+  </batchSummary>
+</report>

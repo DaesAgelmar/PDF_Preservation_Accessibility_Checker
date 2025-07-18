@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="1382628">
+        <name>/data/1808-5245/W4353064126.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="99" failedRules="7" passedChecks="86992" failedChecks="15">
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](475 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = null, DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="2" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[3](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/operators[650]/font[0](ABCDEE+TimesNewRomanPSMT)/DescendantFonts[0](ABCDEE+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](42 0 obj PDPage)/contentStream[0](43 0 obj PDSemanticContentStream)/operators[406]/font[0](ABCDEE+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](ABCDEE+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="10" status="failed" failedChecks="3" tags="structure,table">
+            <description>TR element may contain only TH and TD elements</description>
+            <object>SETR</object>
+            <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[122](258 0 obj SETable Table)/K[0](259 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[122](258 0 obj SETable Table)/K[1](267 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[122](258 0 obj SETable Table)/K[2](273 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](475 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.9" testNumber="1" status="failed" failedChecks="2" tags="structure,note">
+            <description>Note tag shall have ID entry</description>
+            <object>SENote</object>
+            <test>noteID != null &amp;&amp; noteID != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[29](131 0 obj SENote Endnote)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[69](185 0 obj SENote Endnote)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="5" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[46](160 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[53](168 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[139](297 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[140](298 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](94 0 obj PDStructTreeRoot)/K[0](97 0 obj SEPart Part)/K[141](299 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752663783629" finish="1752663786680">00:00:03.051</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752663783515" finish="1752663786735">00:00:03.220</duration>
+  </batchSummary>
+</report>

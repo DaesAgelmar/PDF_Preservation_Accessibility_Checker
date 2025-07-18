@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="485322">
+        <name>/data/1580-9803/W4410568469.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="100" failedRules="6" passedChecks="92556" failedChecks="81">
+          <rule specification="ISO 14289-1:2014" clause="7.5" testNumber="1" status="failed" failedChecks="6" tags="structure,table">
+            <description>If the table's structure is not determinable via Headers and IDs, then structure elements of type TH shall have a Scope attribute</description>
+            <object>SETD</object>
+            <test>hasConnectedHeader != false || unknownHeaders != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[58](598 0 obj SETable Table)/K[1](613 0 obj SETBody TBody)/K[0](614 0 obj SETR TR)/K[1](617 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[61](725 0 obj SETable Table)/K[1](732 0 obj SETBody TBody)/K[0](733 0 obj SETR TR)/K[1](736 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[71](795 0 obj SETable Table)/K[1](810 0 obj SETBody TBody)/K[0](811 0 obj SETR TR)/K[1](814 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[75](867 0 obj SETable Table)/K[1](882 0 obj SETBody TBody)/K[0](883 0 obj SETR TR)/K[1](886 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[95](967 0 obj SETable Table)/K[1](988 0 obj SETBody TBody)/K[0](989 0 obj SETR TR)/K[1](992 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[99](1125 0 obj SETable Table)/K[1](1136 0 obj SETBody TBody)/K[0](1137 0 obj SETR TR)/K[1](1140 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="2" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[37](291 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](136 0 obj PDStructTreeRoot)/K[0](140 0 obj SEDocument Document)/K[51](459 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](1486 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="35" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[0](29 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[1](32 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[2](33 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[3](36 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[4](37 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[5](38 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](39 0 obj PDPage)/annots[0](43 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](44 0 obj PDPage)/annots[0](46 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](87 0 obj PDPage)/annots[0](89 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](87 0 obj PDPage)/annots[1](90 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[0](93 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[1](94 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[2](95 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[3](96 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[4](97 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[5](98 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[6](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[7](100 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[8](101 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[9](102 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[10](103 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[11](104 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[12](105 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[0](108 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[1](109 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[2](110 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[3](111 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[4](112 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[5](113 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[6](114 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[7](115 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[8](116 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[9](117 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[10](118 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](119 0 obj PDPage)/annots[0](121 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.1" testNumber="1" status="failed" failedChecks="2" tags="font">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[1175]/font[0](Arial-BoldMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](52 0 obj PDPage)/contentStream[0](53 0 obj PDSemanticContentStream)/operators[1343]/font[0](ArialMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="35" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[0](29 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[1](32 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[2](33 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[3](36 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[4](37 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/annots[5](38 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](39 0 obj PDPage)/annots[0](43 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](44 0 obj PDPage)/annots[0](46 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](87 0 obj PDPage)/annots[0](89 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](87 0 obj PDPage)/annots[1](90 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[0](93 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[1](94 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[2](95 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[3](96 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[4](97 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[5](98 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[6](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[7](100 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[8](101 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[9](102 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[10](103 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[11](104 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](91 0 obj PDPage)/annots[12](105 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[0](108 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[1](109 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[2](110 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[3](111 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[4](112 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[5](113 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[6](114 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[7](115 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[8](116 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[9](117 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](106 0 obj PDPage)/annots[10](118 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](119 0 obj PDPage)/annots[0](121 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752674664426" finish="1752674667365">00:00:02.939</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752674664240" finish="1752674667436">00:00:03.196</duration>
+  </batchSummary>
+</report>

@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="1294771">
+        <name>/data/2369-937X/W4313585831.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="138" failedRules="8" passedChecks="232113" failedChecks="92">
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="1" status="failed" failedChecks="2">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isPredefinedInXMP2005 == true || isDefinedInMainPackage == true || isDefinedInCurrentPackage == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[5](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[15](http://ns.adobe.com/pdf/1.3/ - pdf:Trapped)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="5">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[41]/font[0](WTWJFG+Vollkorn-Regular)/DescendantFonts[0](WTWJFG+Vollkorn-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[80]/font[0](PDNJPT+Vollkorn-Regular)/DescendantFonts[0](PDNJPT+Vollkorn-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[143]/font[0](CAAORU+Vollkorn-SemiBold)/DescendantFonts[0](CAAORU+Vollkorn-SemiBold)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[191]/font[0](SULTWO+Vollkorn-Italic)/DescendantFonts[0](SULTWO+Vollkorn-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/contentStream[0](2230 0 obj PDContentStream)/operators[297]/font[0](EWZHVG+Vollkorn-Regular)/DescendantFonts[0](EWZHVG+Vollkorn-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.1" testNumber="1" status="failed" failedChecks="1">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[101]/font[0](Times-Roman)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="2" status="failed" failedChecks="5">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isValueTypeCorrect == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[5](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[8](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:DerivedFrom)</context>
+              <errorMessage>XMP property does not correspond to type resourceref</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[9](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:History)</context>
+              <errorMessage>XMP property does not correspond to type seq resourceevent</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[12](http://purl.org/dc/elements/1.1/ - dc:creator)</context>
+              <errorMessage>XMP property does not correspond to type seq propername</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](127 0 obj PDMetadata)/XMPPackage[0]/Properties[15](http://ns.adobe.com/pdf/1.3/ - pdf:Trapped)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="3" status="failed" failedChecks="27">
+            <description>DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set or if a DeviceN-based DefaultCMYK colour space has been set when the DeviceCMYK colour space is used or the file has a PDF/A OutputIntent that contains a CMYK destination profile</description>
+            <object>PDDeviceCMYK</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "CMYK"</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[13]/xObject[0]/contentStream[0](2169 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[13]/xObject[0]/contentStream[0](2169 0 obj PDContentStream)/operators[32]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[13]/xObject[0]/Group[0](2207 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[22]/xObject[0]/contentStream[0](2170 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[22]/xObject[0]/contentStream[0](2170 0 obj PDContentStream)/operators[32]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[22]/xObject[0]/Group[0](2209 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[31]/xObject[0]/contentStream[0](2171 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[31]/xObject[0]/contentStream[0](2171 0 obj PDContentStream)/operators[32]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/contentStream[0](2252 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](2172 0 obj PDContentStream)/operators[31]/xObject[0]/Group[0](2210 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/Group[0](2211 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[216]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[223]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[225]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[235]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[238]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[242]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[246]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[249]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[252]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[254]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[256]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[258]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[260]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[262]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[264]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[267]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[269]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.3.2" testNumber="1" status="failed" failedChecks="36">
+            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
+            <object>PDAnnot</object>
+            <test>Subtype == "Popup" || F != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2137 0 obj PDPage)/annots[0](297 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[0](416 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[1](414 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[2](412 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[3](409 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[4](407 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[5](404 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[6](402 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[7](400 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[8](398 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[9](395 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[10](393 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[11](390 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[12](388 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[13](385 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[14](383 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[15](381 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[16](379 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[17](376 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[18](374 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/annots[19](372 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[0](370 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[1](368 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[2](366 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[3](364 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[4](362 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[5](360 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[6](358 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[7](356 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[8](353 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[9](351 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[10](349 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[11](347 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[12](345 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[13](343 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/annots[14](341 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="4" status="failed" failedChecks="15">
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, or if a PDF/A OutputIntent is present</description>
+            <object>PDDeviceGray</object>
+            <test>gOutputCS != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[14]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](10 0 obj PDPage)/contentStream[0](11 0 obj PDContentStream)/operators[24]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](18 0 obj PDPage)/contentStream[0](19 0 obj PDContentStream)/operators[24]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](24 0 obj PDPage)/contentStream[0](25 0 obj PDContentStream)/operators[24]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](30 0 obj PDPage)/contentStream[0](31 0 obj PDContentStream)/operators[24]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](35 0 obj PDPage)/contentStream[0](36 0 obj PDContentStream)/operators[14]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](43 0 obj PDPage)/contentStream[0](44 0 obj PDContentStream)/operators[24]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](49 0 obj PDPage)/contentStream[0](50 0 obj PDContentStream)/operators[14]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](55 0 obj PDPage)/contentStream[0](56 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](61 0 obj PDPage)/contentStream[0](62 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](68 0 obj PDPage)/contentStream[0](69 0 obj PDContentStream)/operators[25]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](73 0 obj PDPage)/contentStream[0](74 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](79 0 obj PDPage)/contentStream[0](80 0 obj PDContentStream)/operators[25]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](85 0 obj PDPage)/contentStream[0](86 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](93 0 obj PDPage)/contentStream[0](2230 0 obj PDContentStream)/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752697746640" finish="1752697750055">00:00:03.415</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752697746459" finish="1752697750134">00:00:03.675</duration>
+  </batchSummary>
+</report>

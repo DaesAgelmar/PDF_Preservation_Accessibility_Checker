@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="874719">
+        <name>/data/1853-9912/W4367693129.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="138" failedRules="8" passedChecks="42692" failedChecks="243">
+          <rule specification="ISO 19005-2:2011" clause="6.9" testNumber="1" status="failed" failedChecks="1">
+            <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the value of the Configs key in the OCProperties dictionary, shall contain the Name key</description>
+            <object>PDOCConfig</object>
+            <test>Name != null &amp;&amp; Name.length() &gt; 0</test>
+            <check status="failed">
+              <context>root/document[0]/OCProperties[0]/D[0]</context>
+              <errorMessage>Missing or empty Name entry of the optional content configuration dictionary</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.9" testNumber="3" status="failed" failedChecks="1">
+            <description>If an optional content configuration dictionary contains the Order key, the array which is the value of this Order key shall contain references to all OCGs in the conforming file</description>
+            <object>PDOCConfig</object>
+            <test>OCGsNotContainedInOrder == null</test>
+            <check status="failed">
+              <context>root/document[0]/OCProperties[0]/D[0]</context>
+              <errorMessage>Optional content group(s) Headers/Footers not present in the Order entry of the optional content configuration dictionary</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="15">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[5]/font[0](YESLFS+Columbia-Regular)/DescendantFonts[0](YESLFS+Columbia-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[33]/font[0](EAAAAB+GaramondPremrPro-It)/DescendantFonts[0](EAAAAB+GaramondPremrPro-It)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[38]/font[0](EAAAAE+GaramondPremrPro)/DescendantFonts[0](EAAAAE+GaramondPremrPro)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[176]/font[0](TLCXHM+Verdana)/DescendantFonts[0](TLCXHM+Verdana)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[180]/font[0](ZBFDFA+Verdana)/DescendantFonts[0](ZBFDFA+Verdana)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[209]/font[0](YEESWB+Verdana)/DescendantFonts[0](YEESWB+Verdana)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[249]/font[0](YESLFS+Verdana-BoldItalic)/DescendantFonts[0](YESLFS+Verdana-BoldItalic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[265]/font[0](SWUJOO+LiberationSerif)/DescendantFonts[0](SWUJOO+LiberationSerif)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[307]/font[0](VUWVNX+LiberationSerif,Bold)/DescendantFonts[0](VUWVNX+LiberationSerif,Bold)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[320]/font[0](LBIAXM+LiberationSerif-Regular)/DescendantFonts[0](LBIAXM+LiberationSerif-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[330]/font[0](LPGFAX+LiberationSerif,Italic)/DescendantFonts[0](LPGFAX+LiberationSerif,Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[342]/font[0](IWPFVX+LiberationSerif,Italic)/DescendantFonts[0](IWPFVX+LiberationSerif,Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[383]/font[0](UWPPGK+Verdana)/DescendantFonts[0](UWPPGK+Verdana)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/contentStream[0](454 0 obj PDContentStream)/operators[3]/font[0](EAAAAC+Justus-Versalitas)/DescendantFonts[0](EAAAAC+Justus-Versalitas)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/contentStream[0](454 0 obj PDContentStream)/operators[66]/font[0](QMCMWI+Arial)/DescendantFonts[0](QMCMWI+Arial)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.10" testNumber="2" status="failed" failedChecks="2">
+            <description>If the document does not contain a PDF/A OutputIntent, then all Page objects that contain transparency shall include the Group key, and the attribute dictionary that forms the value of that Group key shall include a CS entry whose value shall be used as the default blending colour space</description>
+            <object>PDPage</object>
+            <test>gOutputCS != null || containsGroupCS == true || containsTransparency == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)</context>
+              <errorMessage>The page contains transparent objects with no blending colour space defined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)</context>
+              <errorMessage>The page contains transparent objects with no blending colour space defined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="4" status="failed" failedChecks="201">
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, or if a PDF/A OutputIntent is present</description>
+            <object>PDDeviceGray</object>
+            <test>gOutputCS != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[5]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[5]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[7]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[7]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[9]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[9]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[11]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[11]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[13]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[13]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[15]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[15]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[17]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[17]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[19]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[19]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[23]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[24]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[28]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[28]/strokeCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[30]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[33]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[35]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[38]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[46]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[48]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[49]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[52]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[54]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[56]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[59]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[61]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[64]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[66]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[68]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[70]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[73]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[75]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[77]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[79]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[82]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[84]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[86]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[88]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[90]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[92]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[95]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[98]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[100]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[102]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[104]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[106]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[108]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[111]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[114]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[117]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[120]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[122]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[125]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[127]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[129]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[132]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[135]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[137]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[140]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[143]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[145]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[147]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[149]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[151]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[153]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[155]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[157]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[159]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[302]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[307]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[309]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[311]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[315]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[318]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[320]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[322]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[324]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[326]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[328]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[330]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[333]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[335]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[338]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[340]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[342]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[345]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[347]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[349]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[351]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[353]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[355]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[357]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[370]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/contentStream[0](494 0 obj PDContentStream)/operators[375]/fillCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](5 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.3.2" testNumber="1" status="failed" failedChecks="18">
+            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
+            <object>PDAnnot</object>
+            <test>Subtype == "Popup" || F != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[0](56 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[1](57 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[2](62 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[3](63 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[4](65 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[5](67 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[6](184 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[7](185 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](71 0 obj PDPage)/annots[8](448 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/annots[0](72 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/annots[1](73 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/annots[2](74 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/annots[3](75 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/annots[4](76 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/annots[0](45 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/annots[1](46 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/annots[2](186 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/annots[3](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="2" status="failed" failedChecks="4">
+            <description>DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when the DeviceRGB colour space is used, or if the file has a PDF/A OutputIntent that contains an RGB destination profile</description>
+            <object>PDDeviceRGB</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "RGB "</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/contentStream[0](457 0 obj PDContentStream)/operators[152]/xObject[0]/contentStream[0](230 0 obj PDContentStream)/operators[3]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](80 0 obj PDPage)/contentStream[0](457 0 obj PDContentStream)/operators[152]/xObject[0]/contentStream[0](230 0 obj PDContentStream)/operators[12]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/contentStream[0](454 0 obj PDContentStream)/operators[49]/xObject[0]/contentStream[0](193 0 obj PDContentStream)/operators[3]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](50 0 obj PDPage)/contentStream[0](454 0 obj PDContentStream)/operators[49]/xObject[0]/contentStream[0](193 0 obj PDContentStream)/operators[12]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752699057331" finish="1752699059381">00:00:02.050</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752699057211" finish="1752699059463">00:00:02.252</duration>
+  </batchSummary>
+</report>

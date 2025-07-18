@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="872466">
+        <name>/data/2448-8321/W4381327633.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="140" failedRules="6" passedChecks="239936" failedChecks="1096">
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="1" status="failed" failedChecks="5">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isPredefinedInXMP2005 == true || isDefinedInMainPackage == true || isDefinedInCurrentPackage == true</test>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[5](http://ns.adobe.com/photoshop/1.0/ - photoshop:ColorMode)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[6](http://ns.adobe.com/photoshop/1.0/ - photoshop:ICCProfile)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[22](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]/Properties[15](http://ns.adobe.com/pdf/1.3/ - pdf:Trapped)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]/Properties[17](http://www.extensis.com/meta/FontSense/ - ExtensisFontSense:slug)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="2">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[34]/font[0](ZIMFOJ+Garamond)/DescendantFonts[0](ZIMFOJ+Garamond)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](48 0 obj PDPage)/contentStream[0](49 0 obj PDContentStream)/operators[49]/font[0](ZIMFOJ+Garamond-Italic)/DescendantFonts[0](ZIMFOJ+Garamond-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="3" status="failed" failedChecks="1064">
+            <description>DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set or if a DeviceN-based DefaultCMYK colour space has been set when the DeviceCMYK colour space is used or the file has a PDF/A OutputIntent that contains a CMYK destination profile</description>
+            <object>PDDeviceCMYK</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "CMYK"</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[11]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[20]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[28]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[34]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[42]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[45]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[52]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[59]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[62]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[70]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[77]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[84]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[91]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[98]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[104]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[112]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[120]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[129]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[135]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[141]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[148]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[155]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[158]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDContentStream)/operators[167]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[18]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[25]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[28]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[37]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[39]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[42]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[45]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[48]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[56]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[65]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[68]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[71]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[74]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[83]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[91]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[99]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[107]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[113]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[119]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[126]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[132]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[138]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[145]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[153]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[161]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[169]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[177]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[185]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[192]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[199]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[207]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[215]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[222]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[229]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[236]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[243]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[250]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[257]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[264]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[271]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[278]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[285]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[294]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[0]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[10]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[14]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[22]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[30]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[36]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[44]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[47]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[54]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[61]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[64]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[72]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[79]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[86]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[92]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[98]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[104]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[110]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[118]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDContentStream)/operators[126]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[7]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[11]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[19]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[26]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[34]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[42]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[49]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[56]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[63]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[70]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="4" status="failed" failedChecks="16">
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, or if a PDF/A OutputIntent is present</description>
+            <object>PDDeviceGray</object>
+            <test>gOutputCS != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](10 0 obj PDPage)/contentStream[0](11 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](14 0 obj PDPage)/contentStream[0](15 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](14 0 obj PDPage)/contentStream[0](15 0 obj PDContentStream)/operators[337]/xObject[0](17 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](20 0 obj PDPage)/contentStream[0](21 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](22 0 obj PDPage)/contentStream[0](23 0 obj PDContentStream)/operators[354]/xObject[0](25 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](26 0 obj PDPage)/contentStream[0](27 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](26 0 obj PDPage)/contentStream[0](27 0 obj PDContentStream)/operators[492]/xObject[0](29 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](30 0 obj PDPage)/contentStream[0](31 0 obj PDContentStream)/operators[376]/xObject[0](33 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](30 0 obj PDPage)/contentStream[0](31 0 obj PDContentStream)/operators[387]/xObject[0](35 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](36 0 obj PDPage)/contentStream[0](37 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](36 0 obj PDPage)/contentStream[0](37 0 obj PDContentStream)/operators[369]/xObject[0](39 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](40 0 obj PDPage)/contentStream[0](41 0 obj PDContentStream)/operators[350]/xObject[0](43 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](44 0 obj PDPage)/contentStream[0](45 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](48 0 obj PDPage)/contentStream[0](49 0 obj PDContentStream)/operators[15]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="2" status="failed" failedChecks="8">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isValueTypeCorrect == true</test>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[5](http://ns.adobe.com/photoshop/1.0/ - photoshop:ColorMode)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[6](http://ns.adobe.com/photoshop/1.0/ - photoshop:ICCProfile)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[22](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[23](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:History)</context>
+              <errorMessage>XMP property does not correspond to type seq resourceevent</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/indirectObjects[36](35 0)/directObject[0]/metadata[0](34 0 obj PDMetadata)/XMPPackage[0]/Properties[24](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:DerivedFrom)</context>
+              <errorMessage>XMP property does not correspond to type resourceref</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]/Properties[12](http://purl.org/dc/elements/1.1/ - dc:creator)</context>
+              <errorMessage>XMP property does not correspond to type seq propername</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]/Properties[15](http://ns.adobe.com/pdf/1.3/ - pdf:Trapped)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]/Properties[17](http://www.extensis.com/meta/FontSense/ - ExtensisFontSense:slug)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752666524631" finish="1752666528082">00:00:03.451</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752666524445" finish="1752666528183">00:00:03.738</duration>
+  </batchSummary>
+</report>

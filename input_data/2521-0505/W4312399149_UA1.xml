@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="965478">
+        <name>/data/2521-0505/W4312399149.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="99" failedRules="7" passedChecks="65052" failedChecks="41">
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](52 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="9" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[7](26 0 obj PDPage)/annots[0](186 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](26 0 obj PDPage)/annots[1](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[0](189 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[1](190 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[2](191 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[3](192 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[4](193 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[5](194 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[6](195 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.1" testNumber="1" status="failed" failedChecks="4" tags="font">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](1452 0 obj PDSemanticContentStream)/operators[3147]/font[0](TimesNewRomanPSMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](1452 0 obj PDSemanticContentStream)/operators[3160]/font[0](ArialMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](1452 0 obj PDSemanticContentStream)/operators[4888]/font[0](Arial-BoldMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](4 0 obj PDPage)/contentStream[0](1450 0 obj PDSemanticContentStream)/operators[2371]/font[0](Arial-BoldItalicMT)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="5" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1343 0 obj PDPage)/contentStream[0](1454 0 obj PDSemanticContentStream)/operators[19]/font[0](XFMVSU+Cambria)/DescendantFonts[0](XFMVSU+Cambria)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1343 0 obj PDPage)/contentStream[0](1454 0 obj PDSemanticContentStream)/operators[311]/font[0](UQAICA+Cambria-Italic)/DescendantFonts[0](UQAICA+Cambria-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1343 0 obj PDPage)/contentStream[0](1454 0 obj PDSemanticContentStream)/operators[644]/font[0](AYZQAN+Cambria-Italic)/DescendantFonts[0](AYZQAN+Cambria-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](1452 0 obj PDSemanticContentStream)/operators[19]/font[0](MVYKMP+Cambria)/DescendantFonts[0](MVYKMP+Cambria)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](26 0 obj PDPage)/contentStream[0](1440 0 obj PDSemanticContentStream)/operators[426]/font[0](VBATLS+Arial-BoldMT)/DescendantFonts[0](VBATLS+Arial-BoldMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="7" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[0](220 0 obj SETable Table)/K[0](1267 0 obj SETHead THead)/K[0](1293 0 obj SETR TR)/K[0](1303 0 obj SETH TH)/K[1](1315 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[0](220 0 obj SETable Table)/K[0](1267 0 obj SETHead THead)/K[0](1293 0 obj SETR TR)/K[2](1305 0 obj SETH TH)/K[1](1307 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[40](260 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[64](284 0 obj SEL L)/K[3](768 0 obj SELI LI)/K[0](769 0 obj SELBody LBody)/K[1](771 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[64](284 0 obj SEL L)/K[3](768 0 obj SELI LI)/K[0](769 0 obj SELBody LBody)/K[2](772 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[64](284 0 obj SEL L)/K[3](768 0 obj SELI LI)/K[0](769 0 obj SELBody LBody)/K[3](773 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[148](367 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="9" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[7](26 0 obj PDPage)/annots[0](186 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](26 0 obj PDPage)/annots[1](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[0](189 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[1](190 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[2](191 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[3](192 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[4](193 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[5](194 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](32 0 obj PDPage)/annots[6](195 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="6" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[0](220 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[49](269 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[56](276 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[96](316 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[100](320 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](199 0 obj PDStructTreeRoot)/K[0](219 0 obj SEDocument Document)/K[105](325 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752680996453" finish="1752680999562">00:00:03.109</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752680996347" finish="1752680999637">00:00:03.290</duration>
+  </batchSummary>
+</report>

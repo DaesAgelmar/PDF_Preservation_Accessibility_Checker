@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="378699">
+        <name>/data/1851-1740/W4389430198.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="96" failedRules="10" passedChecks="151734" failedChecks="737">
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = dictionary(size = 1), DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="3" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/operators[149]/font[0](CQGFNZ+Iconospararevistasfilo-Regula)/DescendantFonts[0](CQGFNZ+Iconospararevistasfilo-Regula)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/operators[531]/font[0](OIFZZB+Rosario-Regular)/DescendantFonts[0](OIFZZB+Rosario-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](15 0 obj PDPage)/contentStream[0](16 0 obj PDSemanticContentStream)/operators[454]/font[0](ZJSNXF+Rosario-Italic)/DescendantFonts[0](ZJSNXF+Rosario-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](256 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="44" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/annots[0](1580 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/annots[1](1581 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/annots[2](1582 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[0](83 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[1](81 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[2](82 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[3](84 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](12 0 obj PDPage)/annots[0](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[0](137 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[1](125 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[2](129 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[3](141 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[4](128 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[5](127 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[6](118 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[7](140 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[8](124 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[9](133 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[10](131 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[11](138 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[12](126 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[0](169 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[1](170 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[2](158 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[3](161 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[4](160 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[5](152 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[6](153 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[7](149 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[8](155 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[9](150 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[10](156 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[11](154 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[12](157 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[13](151 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[0](179 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[1](175 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[2](184 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[3](180 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[4](178 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[5](185 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[6](171 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[7](188 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[8](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="44" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/annots[0](1580 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/annots[1](1581 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/annots[2](1582 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[0](83 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[1](81 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[2](82 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/annots[3](84 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](12 0 obj PDPage)/annots[0](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[0](137 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[1](125 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[2](129 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[3](141 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[4](128 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[5](127 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[6](118 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[7](140 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[8](124 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[9](133 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[10](131 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[11](138 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)/annots[12](126 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[0](169 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[1](170 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[2](158 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[3](161 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[4](160 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[5](152 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[6](153 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[7](149 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[8](155 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[9](150 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[10](156 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[11](154 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[12](157 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)/annots[13](151 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[0](179 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[1](175 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[2](184 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[3](180 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[4](178 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[5](185 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[6](171 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[7](188 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)/annots[8](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="633" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[0]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[5]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[14]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[52]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/content[66]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)/contentStream[0]/operators[3]/xObject[0]/contentStream[0](1619 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[6]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[8]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](76 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[5]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[8]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[0]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[6]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[8]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[16]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[17]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[18]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[19]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[20]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[21]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[22]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[23]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[24]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[25]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[26]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[27]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[28]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[29]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[30]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[31]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[32]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[33]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[34]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[35]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[36]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[37]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[38]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[39]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[40]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[41]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[42]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[43]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[44]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[45]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[46]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[47]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[12]/contentItem[48]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[0]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[5]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[8]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[16]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[17]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[18]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[19]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[20]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[45]/contentItem[21]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.5" testNumber="1" status="failed" failedChecks="3" tags="structure,table">
+            <description>If the table's structure is not determinable via Headers and IDs, then structure elements of type TH shall have a Scope attribute</description>
+            <object>SETD</object>
+            <test>hasConnectedHeader != false || unknownHeaders != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](258 0 obj PDStructTreeRoot)/K[0](260 0 obj SEDocument Document)/K[0](292 0 obj SEArt Article)/K[0](293 0 obj SESect Story)/K[25](336 0 obj SEP Normal)/K[0](1360 0 obj SETable Table)/K[1](1362 0 obj SETBody TBody)/K[0](1363 0 obj SETR TR)/K[0](1511 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](258 0 obj PDStructTreeRoot)/K[0](260 0 obj SEDocument Document)/K[0](292 0 obj SEArt Article)/K[0](293 0 obj SESect Story)/K[32](343 0 obj SEP Normal)/K[0](1063 0 obj SETable Table)/K[1](1065 0 obj SETBody TBody)/K[0](1285 0 obj SETR TR)/K[0](1345 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](258 0 obj PDStructTreeRoot)/K[0](260 0 obj SEDocument Document)/K[0](292 0 obj SEArt Article)/K[0](293 0 obj SESect Story)/K[90](401 0 obj SEP Normal)/K[0](843 0 obj SETable Table)/K[1](845 0 obj SETBody TBody)/K[0](846 0 obj SETR TR)/K[0](964 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.3" testNumber="1" status="failed" failedChecks="6" tags="page">
+            <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S</description>
+            <object>PDPage</object>
+            <test>containsAnnotations == false || Tabs == 'S'</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1578 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](12 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](61 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[22](68 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[23](71 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](256 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="11" status="failed" failedChecks="1" tags="structure,table">
+            <description>Table element should contain zero or one THead kid</description>
+            <object>SETable</object>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length &lt;= 1</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](258 0 obj PDStructTreeRoot)/K[0](260 0 obj SEDocument Document)/K[0](292 0 obj SEArt Article)/K[0](293 0 obj SESect Story)/K[32](343 0 obj SEP Normal)/K[0](1063 0 obj SETable Table)</context>
+              <errorMessage>Table element contains more than one THead kid</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752690258116" finish="1752690261311">00:00:03.195</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752690257983" finish="1752690261410">00:00:03.427</duration>
+  </batchSummary>
+</report>

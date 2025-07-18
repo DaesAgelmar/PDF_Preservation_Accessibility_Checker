@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="1333656">
+        <name>/data/2303-8888/W4200400783.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="99" failedRules="7" passedChecks="85269" failedChecks="86">
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="8" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/operators[27]/font[0](QVCMSX+Calibri)/DescendantFonts[0](QVCMSX+Calibri)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/operators[454]/font[0](ASAUCD+TimesNewRomanPS-BoldMT)/DescendantFonts[0](ASAUCD+TimesNewRomanPS-BoldMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/operators[488]/font[0](RCPSGV+TimesNewRomanPSMT)/DescendantFonts[0](RCPSGV+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/operators[507]/font[0](ZBOJOF+Calibri-Bold)/DescendantFonts[0](ZBOJOF+Calibri-Bold)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[556]/font[0](NJKPCD+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](NJKPCD+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[524]/font[0](WHYRYL+TimesNewRomanPS-BoldItalicMT)/DescendantFonts[0](WHYRYL+TimesNewRomanPS-BoldItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](20 0 obj PDPage)/contentStream[0](21 0 obj PDSemanticContentStream)/operators[628]/font[0](FSJTUT+Calibri-BoldItalic)/DescendantFonts[0](FSJTUT+Calibri-BoldItalic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/operators[455]/font[0](SWVTUT+Calibri-Italic)/DescendantFonts[0](SWVTUT+Calibri-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](135 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="14" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[10](230 0 obj SESect Story)/K[24](716 0 obj SEP Normal)/K[0](784 0 obj SETable Table)/K[0](785 0 obj SETR TR)/K[0](786 0 obj SETD TD)/K[0](787 0 obj SEP NormalParagraphStyle)/K[0](788 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[10](230 0 obj SESect Story)/K[27](719 0 obj SEP Normal)/K[0](776 0 obj SETable Table)/K[0](777 0 obj SETR TR)/K[0](778 0 obj SETD TD)/K[0](779 0 obj SEP NormalParagraphStyle)/K[0](780 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[10](230 0 obj SESect Story)/K[29](721 0 obj SEP Normal)/K[0](770 0 obj SETable Table)/K[0](771 0 obj SETR TR)/K[0](772 0 obj SETD TD)/K[0](773 0 obj SEP NormalParagraphStyle)/K[0](774 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[10](230 0 obj SESect Story)/K[34](726 0 obj SEP Normal)/K[0](754 0 obj SETable Table)/K[0](755 0 obj SETR TR)/K[0](756 0 obj SETD TD)/K[0](757 0 obj SEP NormalParagraphStyle)/K[0](758 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[10](230 0 obj SESect Story)/K[37](729 0 obj SEP Normal)/K[0](747 0 obj SETable Table)/K[0](748 0 obj SETR TR)/K[0](749 0 obj SETD TD)/K[0](750 0 obj SEP NormalParagraphStyle)/K[0](751 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[11](231 0 obj SESect Story)/K[23](446 0 obj SEP Normal)/K[0](514 0 obj SETable Table)/K[0](515 0 obj SETR TR)/K[0](516 0 obj SETD TD)/K[0](517 0 obj SEP NormalParagraphStyle)/K[0](518 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[11](231 0 obj SESect Story)/K[26](449 0 obj SEP Normal)/K[0](506 0 obj SETable Table)/K[0](507 0 obj SETR TR)/K[0](508 0 obj SETD TD)/K[0](509 0 obj SEP NormalParagraphStyle)/K[0](510 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[11](231 0 obj SESect Story)/K[28](451 0 obj SEP Normal)/K[0](500 0 obj SETable Table)/K[0](501 0 obj SETR TR)/K[0](502 0 obj SETD TD)/K[0](503 0 obj SEP NormalParagraphStyle)/K[0](504 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[11](231 0 obj SESect Story)/K[34](457 0 obj SEP Normal)/K[0](489 0 obj SETable Table)/K[0](490 0 obj SETR TR)/K[0](491 0 obj SETD TD)/K[0](492 0 obj SEP NormalParagraphStyle)/K[0](493 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[11](231 0 obj SESect Story)/K[37](460 0 obj SEP Normal)/K[0](481 0 obj SETable Table)/K[0](482 0 obj SETR TR)/K[0](483 0 obj SETD TD)/K[0](484 0 obj SEP NormalParagraphStyle)/K[0](485 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[12](232 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[14](234 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[16](236 0 obj SESect Story)/K[0](237 0 obj SEP _No_paragraph_style_)/K[0](313 0 obj SETable Table)/K[1](315 0 obj SETR TR)/K[1](390 0 obj SETD TD)/K[0](391 0 obj SEP Normal)/K[0](392 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[16](236 0 obj SESect Story)/K[1](238 0 obj SEP _No_paragraph_style_)/K[0](243 0 obj SETable Table)/K[1](245 0 obj SETR TR)/K[1](294 0 obj SETD TD)/K[0](295 0 obj SEP Normal)/K[0](296 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](135 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="57" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/content[47]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/operators[13]/xObject[0]/contentStream[0](1126 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1100 0 obj PDPage)/contentStream[0]/operators[13]/xObject[0]/contentStream[0](1126 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](101 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[18]/xObject[0]/contentStream[0](92 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[18]/xObject[0]/contentStream[0](92 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](104 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/content[22]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/content[51]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[16]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[17]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[18]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[19]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[20]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[21]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[22]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[23]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[24]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/content[36]/contentItem[25]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](66 0 obj PDPage)/contentStream[0](67 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](80 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[16]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[17]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[18]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](82 0 obj PDPage)/contentStream[0](83 0 obj PDSemanticContentStream)/content[56]/contentItem[19]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = dictionary(size = 1), DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.9" testNumber="1" status="failed" failedChecks="4" tags="structure,note">
+            <description>Note tag shall have ID entry</description>
+            <object>SENote</object>
+            <test>noteID != null &amp;&amp; noteID != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[7](227 0 obj SESect Story)/K[0](989 0 obj SEP _04Sazetak_tekst)/K[7](1030 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[7](227 0 obj SESect Story)/K[1](990 0 obj SEP _04Sazetak_tekst)/K[7](998 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[10](230 0 obj SESect Story)/K[23](715 0 obj SEP Normal)/K[3](792 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](137 0 obj PDStructTreeRoot)/K[0](139 0 obj SEDocument Document)/K[0](219 0 obj SEArt Article)/K[11](231 0 obj SESect Story)/K[22](445 0 obj SEP Normal)/K[1](520 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752676172987" finish="1752676176164">00:00:03.177</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752676172858" finish="1752676176250">00:00:03.392</duration>
+  </batchSummary>
+</report>

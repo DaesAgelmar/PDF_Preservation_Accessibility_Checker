@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="158357">
+        <name>/data/1708-6892/W4401280089.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="101" failedRules="5" passedChecks="1011" failedChecks="15">
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="1" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 4 span different number of columns</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](80 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.1" testNumber="1" status="failed" failedChecks="2" tags="font">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[12]/font[0](Helvetica)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[208]/font[0](Helvetica-Bold)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="10" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[4](38 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[0](42 0 obj SETHead THead)/K[0](43 0 obj SETR TR)/K[0](44 0 obj SETH TH)/K[1](46 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[0](42 0 obj SETHead THead)/K[0](43 0 obj SETR TR)/K[1](47 0 obj SETH TH)/K[1](49 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[0](51 0 obj SETR TR)/K[0](52 0 obj SETH TH)/K[1](54 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[0](51 0 obj SETR TR)/K[1](55 0 obj SETD TD)/K[1](57 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[1](58 0 obj SETR TR)/K[0](59 0 obj SETH TH)/K[1](61 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[1](58 0 obj SETR TR)/K[1](62 0 obj SETD TD)/K[1](64 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[2](65 0 obj SETR TR)/K[0](66 0 obj SETH TH)/K[1](68 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[2](65 0 obj SETR TR)/K[1](69 0 obj SETD TD)/K[1](71 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](27 0 obj PDStructTreeRoot)/K[0](31 0 obj SEDocument Document)/K[7](41 0 obj SETable Table)/K[1](50 0 obj SETBody TBody)/K[2](65 0 obj SETR TR)/K[2](72 0 obj SETD TD)/K[1](74 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](80 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752672093713" finish="1752672094370">00:00:00.657</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752672093643" finish="1752672094415">00:00:00.772</duration>
+  </batchSummary>
+</report>

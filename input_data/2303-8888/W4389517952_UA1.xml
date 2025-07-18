@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="519595">
+        <name>/data/2303-8888/W4389517952.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="100" failedRules="6" passedChecks="203391" failedChecks="78">
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](73 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="5" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](974 0 obj PDPage)/contentStream[0]/operators[56]/font[0](VULCBN+Calibri)/DescendantFonts[0](VULCBN+Calibri)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](974 0 obj PDPage)/contentStream[0]/operators[451]/font[0](QXWTJX+TimesNewRomanPS-BoldMT)/DescendantFonts[0](QXWTJX+TimesNewRomanPS-BoldMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](974 0 obj PDPage)/contentStream[0]/operators[472]/font[0](AZZBTD+TimesNewRomanPSMT)/DescendantFonts[0](AZZBTD+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](974 0 obj PDPage)/contentStream[0]/operators[589]/font[0](RRHUXV+Calibri-Bold)/DescendantFonts[0](RRHUXV+Calibri-Bold)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[433]/font[0](CSUIVZ+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](CSUIVZ+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](73 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.9" testNumber="1" status="failed" failedChecks="39" tags="structure,note">
+            <description>Note tag shall have ID entry</description>
+            <object>SENote</object>
+            <test>noteID != null &amp;&amp; noteID != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[5](536 0 obj SEP Normal)/K[1](817 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[6](537 0 obj SEP Normal)/K[1](811 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[15](546 0 obj SEP Normal)/K[2](758 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[15](546 0 obj SEP Normal)/K[15](771 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[20](551 0 obj SEP Normal)/K[1](745 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[23](554 0 obj SEP Normal)/K[5](730 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[26](557 0 obj SEP Normal)/K[1](713 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[30](561 0 obj SEP Normal)/K[1](697 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[40](571 0 obj SEP Normal)/K[2](635 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[40](571 0 obj SEP Normal)/K[5](638 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[40](571 0 obj SEP Normal)/K[7](640 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[40](571 0 obj SEP Normal)/K[14](647 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[42](573 0 obj SEP Normal)/K[2](629 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[43](574 0 obj SEP Normal)/K[1](623 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[44](575 0 obj SEP Normal)/K[7](618 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[45](576 0 obj SEP Normal)/K[1](597 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[45](576 0 obj SEP Normal)/K[3](599 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[46](577 0 obj SEP Normal)/K[1](591 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[11](197 0 obj SESect Story)/K[47](578 0 obj SEP Normal)/K[1](586 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[6](205 0 obj SEP Normal)/K[1](514 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[7](206 0 obj SEP Normal)/K[3](502 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[16](215 0 obj SEP Normal)/K[1](456 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[16](215 0 obj SEP Normal)/K[10](465 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[21](220 0 obj SEP Normal)/K[3](432 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[24](223 0 obj SEP Normal)/K[4](414 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[25](224 0 obj SEP Normal)/K[2](406 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[27](226 0 obj SEP Normal)/K[2](384 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[31](230 0 obj SEP Normal)/K[2](364 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[41](240 0 obj SEP Normal)/K[2](309 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[41](240 0 obj SEP Normal)/K[5](312 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[41](240 0 obj SEP Normal)/K[9](316 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[41](240 0 obj SEP Normal)/K[11](318 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[43](242 0 obj SEP Normal)/K[2](303 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[44](243 0 obj SEP Normal)/K[4](295 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[45](244 0 obj SEP Normal)/K[4](286 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[46](245 0 obj SEP Normal)/K[2](273 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[46](245 0 obj SEP Normal)/K[4](275 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[47](246 0 obj SEP Normal)/K[7](267 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](75 0 obj PDStructTreeRoot)/K[0](77 0 obj SEDocument Document)/K[0](185 0 obj SEArt Article)/K[12](198 0 obj SESect Story)/K[48](247 0 obj SEP Normal)/K[2](254 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = dictionary(size = 1), DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="31" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](974 0 obj PDPage)/contentStream[0]/content[3]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](36 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[18]/xObject[0]/contentStream[0](33 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[18]/xObject[0]/contentStream[0](33 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/content[54]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/content[150]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](38 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[18]/xObject[0]/contentStream[0](37 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[18]/xObject[0]/contentStream[0](37 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDSemanticContentStream)/content[70]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](7 0 obj PDPage)/contentStream[0](8 0 obj PDSemanticContentStream)/content[65]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](7 0 obj PDPage)/contentStream[0](8 0 obj PDSemanticContentStream)/content[145]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](9 0 obj PDPage)/contentStream[0](10 0 obj PDSemanticContentStream)/content[158]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](11 0 obj PDPage)/contentStream[0](12 0 obj PDSemanticContentStream)/content[53]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](11 0 obj PDPage)/contentStream[0](12 0 obj PDSemanticContentStream)/content[130]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](11 0 obj PDPage)/contentStream[0](12 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](54 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](13 0 obj PDPage)/contentStream[0](14 0 obj PDSemanticContentStream)/content[58]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](13 0 obj PDPage)/contentStream[0](14 0 obj PDSemanticContentStream)/content[134]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](15 0 obj PDPage)/contentStream[0](16 0 obj PDSemanticContentStream)/content[45]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](15 0 obj PDPage)/contentStream[0](16 0 obj PDSemanticContentStream)/content[140]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[60]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[132]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[48]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[143]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[67]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](25 0 obj PDPage)/contentStream[0](26 0 obj PDSemanticContentStream)/content[52]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](25 0 obj PDPage)/contentStream[0](26 0 obj PDSemanticContentStream)/content[140]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](27 0 obj PDPage)/contentStream[0](28 0 obj PDSemanticContentStream)/content[53]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](27 0 obj PDPage)/contentStream[0](28 0 obj PDSemanticContentStream)/content[121]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/content[26]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/content[55]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752676207259" finish="1752676210462">00:00:03.203</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752676207141" finish="1752676210541">00:00:03.400</duration>
+  </batchSummary>
+</report>

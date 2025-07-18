@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="599225">
+        <name>/data/2391-5838/W4392562097.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="97" failedRules="9" passedChecks="3488" failedChecks="4527">
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="11" status="failed" failedChecks="1" tags="structure">
+            <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7</description>
+            <object>PDDocument</object>
+            <test>containsStructTreeRoot == true</test>
+            <check status="failed">
+              <context>root/document[0]</context>
+              <errorMessage>StructTreeRoot entry is not present in the document catalog</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = dictionary(size = 1), DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="4" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/operators[265]/font[0](BVVYIW+PalatinoLinotype-Roman)/DescendantFonts[0](BVVYIW+PalatinoLinotype-Roman)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/operators[67]/font[0](UNJIOK+TimesNewRomanPSMT)/DescendantFonts[0](UNJIOK+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/operators[218]/font[0](QHGKKS+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](QHGKKS+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](43 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/operators[74]/font[0](OEHYIW+TimesNewRomanPS-BoldMT)/DescendantFonts[0](OEHYIW+TimesNewRomanPS-BoldMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="34" status="failed" failedChecks="2135" tags="lang,text">
+            <description>Natural language for text in page content shall be determined</description>
+            <object>SETextItem</object>
+            <test>gContainsCatalogLang == true || Lang != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[2]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[2]/contentItem[2]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[3]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[2]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[3]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[4]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[5]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[6]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[8]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[5]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[6]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[6]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[7]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[2]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[3]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[4]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[5]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[6]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[7]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[8]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[9]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[10]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[11]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[4]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[5]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[6]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[7]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[8]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[9]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[10]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[11]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[12]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[13]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[14]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[15]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[16]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[17]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[18]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[19]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[20]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[21]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[22]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[23]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[24]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[25]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[26]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[27]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[28]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[29]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[30]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[31]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[32]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[33]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[34]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[35]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[37]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[11]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[2]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[3]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[4]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[5]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[6]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[7]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[8]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[1]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[2]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[3]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[4]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[5]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[6]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[7]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[8]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[9]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[10]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[11]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[12]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[13]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[14]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[15]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[16]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[17]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[18]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[19]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[20]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[21]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[22]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[23]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[24]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[25]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](2 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="2257" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[2]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[2]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[2]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[3]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[4]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[5]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[6]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[6]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[7]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[8]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[16]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[17]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[18]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[19]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[20]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[21]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[22]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[23]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[24]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[25]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[26]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[27]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[28]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[29]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[30]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[31]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[32]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[33]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[34]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[35]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[36]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[10]/contentItem[37]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[11]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[12]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[2]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="30" status="failed" failedChecks="126" tags="lang,alt-text">
+            <description>Natural language for text in ActualText attribute in Span Marked Content shall be determined</description>
+            <object>SEMarkedContent</object>
+            <test>tag != 'Span' || ActualText == null || Lang != null || inheritedLang != null || gContainsCatalogLang == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](22 0 obj PDPage)/contentStream[0](146 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](23 0 obj PDPage)/contentStream[0](150 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](24 0 obj PDPage)/contentStream[0](152 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](24 0 obj PDPage)/contentStream[0](152 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](24 0 obj PDPage)/contentStream[0](152 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](24 0 obj PDPage)/contentStream[0](152 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](25 0 obj PDPage)/contentStream[0](154 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](25 0 obj PDPage)/contentStream[0](154 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](25 0 obj PDPage)/contentStream[0](154 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](25 0 obj PDPage)/contentStream[0](154 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](26 0 obj PDPage)/contentStream[0](156 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](26 0 obj PDPage)/contentStream[0](156 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](26 0 obj PDPage)/contentStream[0](156 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](26 0 obj PDPage)/contentStream[0](156 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](26 0 obj PDPage)/contentStream[0](156 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](27 0 obj PDPage)/contentStream[0](136 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](27 0 obj PDPage)/contentStream[0](136 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](27 0 obj PDPage)/contentStream[0](136 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](27 0 obj PDPage)/contentStream[0](136 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](28 0 obj PDPage)/contentStream[0](138 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](28 0 obj PDPage)/contentStream[0](138 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](28 0 obj PDPage)/contentStream[0](138 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](28 0 obj PDPage)/contentStream[0](138 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](29 0 obj PDPage)/contentStream[0](140 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](29 0 obj PDPage)/contentStream[0](140 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](29 0 obj PDPage)/contentStream[0](140 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](29 0 obj PDPage)/contentStream[0](140 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](29 0 obj PDPage)/contentStream[0](140 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](29 0 obj PDPage)/contentStream[0](140 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[15]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](30 0 obj PDPage)/contentStream[0](142 0 obj PDSemanticContentStream)/content[17]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](31 0 obj PDPage)/contentStream[0](144 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](32 0 obj PDPage)/contentStream[0](126 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](33 0 obj PDPage)/contentStream[0](128 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](34 0 obj PDPage)/contentStream[0](130 0 obj PDSemanticContentStream)/content[15]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](35 0 obj PDPage)/contentStream[0](132 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[15]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](36 0 obj PDPage)/contentStream[0](134 0 obj PDSemanticContentStream)/content[17]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[3]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[5]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[7]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[9]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[11]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[13]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](37 0 obj PDPage)/contentStream[0](115 0 obj PDSemanticContentStream)/content[15]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](38 0 obj PDPage)/contentStream[0](117 0 obj PDSemanticContentStream)/content[1]</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="6.2" testNumber="1" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a MarkInfo dictionary containing an entry, Marked, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>Marked == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>MarkInfo dictionary is not present in the document catalog, or Marked entry is set to false or is not present in the MarkInfo dictionary (MarkInfo = null, Marked = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](2 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752679140497" finish="1752679142404">00:00:01.907</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752679140319" finish="1752679142517">00:00:02.198</duration>
+  </batchSummary>
+</report>

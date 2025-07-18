@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="491048">
+        <name>/data/2641-970X/W3015845054.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="93" failedRules="13" passedChecks="80364" failedChecks="188">
+          <rule specification="ISO 14289-1:2014" clause="7.9" testNumber="1" status="failed" failedChecks="2" tags="structure,note">
+            <description>Note tag shall have ID entry</description>
+            <object>SENote</object>
+            <test>noteID != null &amp;&amp; noteID != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[55](1654 0 obj SENote Footnote)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[97](1603 0 obj SENote Footnote)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](72 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.5" testNumber="1" status="failed" failedChecks="1" tags="structure,table">
+            <description>If the table's structure is not determinable via Headers and IDs, then structure elements of type TH shall have a Scope attribute</description>
+            <object>SETD</object>
+            <test>hasConnectedHeader != false || unknownHeaders != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[281](311 0 obj SETable Table)/K[1](310 0 obj SETR TR)/K[2](317 0 obj SETD TD)</context>
+              <errorMessage>TD does not contain Headers attribute, and Headers for this table cell cannot be determined algorithmically</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="1" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[268](409 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="10" status="failed" failedChecks="20" tags="structure,table">
+            <description>TR element may contain only TH and TD elements</description>
+            <object>SETR</object>
+            <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[144](1487 0 obj SETable Table)/K[0](1489 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[144](1487 0 obj SETable Table)/K[2](1491 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[144](1487 0 obj SETable Table)/K[9](1486 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[153](1319 0 obj SETable Table)/K[0](1321 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[153](1319 0 obj SETable Table)/K[2](1323 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[153](1319 0 obj SETable Table)/K[12](1318 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[198](1061 0 obj SETable Table)/K[0](1063 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[198](1061 0 obj SETable Table)/K[2](1065 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[198](1061 0 obj SETable Table)/K[18](1060 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[212](816 0 obj SETable Table)/K[0](818 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[212](816 0 obj SETable Table)/K[2](820 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[212](816 0 obj SETable Table)/K[16](815 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[243](576 0 obj SETable Table)/K[0](578 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[243](576 0 obj SETable Table)/K[2](580 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[243](576 0 obj SETable Table)/K[13](575 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[268](409 0 obj SETable Table)/K[1](412 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[268](409 0 obj SETable Table)/K[3](414 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[268](409 0 obj SETable Table)/K[8](408 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[281](311 0 obj SETable Table)/K[0](313 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[281](311 0 obj SETable Table)/K[1](310 0 obj SETR TR)</context>
+              <errorMessage>TR element contains P element(s) instead of TH or TD</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="43" status="failed" failedChecks="2" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan == null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[144](1487 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns (6 and 5 respectively)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[198](1061 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns (6 and 5 respectively)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = null, DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="12" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[1](1713 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[2](1720 0 obj SEArt TextBox)/K[1](1711 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[3](1716 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[4](1718 0 obj SEArt TextBox)/K[0](1714 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[7](1710 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[10](1706 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[17](1701 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[20](1705 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[21](1722 0 obj SEArt TextBox)/K[1](1707 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[22](1703 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[31](1704 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](87 0 obj PDStructTreeRoot)/K[0](88 0 obj SESect Sect)/K[38](1702 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="40" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/annots[0](1662 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/annots[1](1659 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/annots[2](1656 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[0](167 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[1](164 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[2](161 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[0](1607 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[1](1605 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[2](157 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[3](153 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[0](261 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[1](258 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[2](256 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[3](253 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[4](250 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[5](247 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[6](244 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[7](241 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[8](238 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[9](235 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[10](232 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[0](225 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[1](222 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[2](219 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[3](216 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[4](213 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[5](210 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[6](208 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[7](205 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[8](202 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[9](199 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[10](196 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[11](193 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[12](190 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[13](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[0](182 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[1](179 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[2](176 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[3](173 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[4](170 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="1" status="failed" failedChecks="33" tags="artifact">
+            <description>Content marked as Artifact should not be present inside tagged content</description>
+            <object>SEMarkedContent</object>
+            <test>tag != 'Artifact' || isTaggedContent == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[8](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[16]{mcid:24}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1423 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[30]{mcid:40}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1435 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[76]{mcid:105}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1479 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[12]{mcid:8}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1239 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[26]{mcid:21}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1251 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[101]{mcid:91}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1312 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[12]{mcid:20}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 944 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[26]{mcid:36}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 956 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[133]{mcid:180}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 1053 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](25 0 obj PDPage)/contentStream[0](1791 0 obj PDSemanticContentStream)/content[29]{mcid:14}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 713 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](25 0 obj PDPage)/contentStream[0](1791 0 obj PDSemanticContentStream)/content[43]{mcid:27}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 725 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](25 0 obj PDPage)/contentStream[0](1791 0 obj PDSemanticContentStream)/content[144]{mcid:125}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 810 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[12]{mcid:8}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 476 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[26]{mcid:21}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 488 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[103]{mcid:98}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 555 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[11]{mcid:5}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 336 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[15]{mcid:9}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 339 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[18]{mcid:11}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 341 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[21]{mcid:13}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 343 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[24]{mcid:15}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 345 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[27]{mcid:17}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 347 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[30]{mcid:19}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 349 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[33]{mcid:21}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 351 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[34]{mcid:22}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 352 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[37]{mcid:24}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 354 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[39]{mcid:26}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 356 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[41]{mcid:28}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 358 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[43]{mcid:30}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 360 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[45]{mcid:32}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 362 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[55]{mcid:41}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 370 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[92]{mcid:76}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 401 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](35 0 obj PDPage)/contentStream[0](1788 0 obj PDSemanticContentStream)/content[22]{mcid:18}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 293 0 obj)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](35 0 obj PDPage)/contentStream[0](1788 0 obj PDSemanticContentStream)/content[46]{mcid:68}</context>
+              <errorMessage>Content marked as Artifact is present inside tagged content (parent struct element 307 0 obj)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="40" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/annots[0](1662 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/annots[1](1659 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/annots[2](1656 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[0](167 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[1](164 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[2](161 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[0](1607 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[1](1605 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[2](157 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/annots[3](153 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[0](261 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[1](258 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[2](256 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[3](253 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[4](250 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[5](247 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[6](244 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[7](241 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[8](238 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[9](235 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](39 0 obj PDPage)/annots[10](232 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[0](225 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[1](222 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[2](219 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[3](216 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[4](213 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[5](210 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[6](208 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[7](205 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[8](202 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[9](199 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[10](196 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[11](193 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[12](190 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[20](42 0 obj PDPage)/annots[13](187 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[0](182 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[1](179 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[2](176 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[3](173 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[21](45 0 obj PDPage)/annots[4](170 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="2" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/contentStream[0](1771 0 obj PDSemanticContentStream)/operators[391]/font[0](EGIAUA+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](EGIAUA+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](1737 0 obj PDPage)/contentStream[0](1771 0 obj PDSemanticContentStream)/operators[447]/font[0](BZUIEG+TimesNewRomanPSMT)/DescendantFonts[0](BZUIEG+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="2" status="failed" failedChecks="33" tags="artifact">
+            <description>Tagged content should not be present inside content marked as Artifact</description>
+            <object>SEMarkedContent</object>
+            <test>isTaggedContent == false || parentsTags.contains('Artifact') == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[8](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[16]{mcid:24}</context>
+              <errorMessage>Tagged content (parent struct element 1423 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[30]{mcid:40}</context>
+              <errorMessage>Tagged content (parent struct element 1435 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](17 0 obj PDPage)/contentStream[0](18 0 obj PDSemanticContentStream)/content[76]{mcid:105}</context>
+              <errorMessage>Tagged content (parent struct element 1479 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[12]{mcid:8}</context>
+              <errorMessage>Tagged content (parent struct element 1239 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[26]{mcid:21}</context>
+              <errorMessage>Tagged content (parent struct element 1251 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[101]{mcid:91}</context>
+              <errorMessage>Tagged content (parent struct element 1312 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[12]{mcid:20}</context>
+              <errorMessage>Tagged content (parent struct element 944 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[26]{mcid:36}</context>
+              <errorMessage>Tagged content (parent struct element 956 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[133]{mcid:180}</context>
+              <errorMessage>Tagged content (parent struct element 1053 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](25 0 obj PDPage)/contentStream[0](1791 0 obj PDSemanticContentStream)/content[29]{mcid:14}</context>
+              <errorMessage>Tagged content (parent struct element 713 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](25 0 obj PDPage)/contentStream[0](1791 0 obj PDSemanticContentStream)/content[43]{mcid:27}</context>
+              <errorMessage>Tagged content (parent struct element 725 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](25 0 obj PDPage)/contentStream[0](1791 0 obj PDSemanticContentStream)/content[144]{mcid:125}</context>
+              <errorMessage>Tagged content (parent struct element 810 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[12]{mcid:8}</context>
+              <errorMessage>Tagged content (parent struct element 476 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[26]{mcid:21}</context>
+              <errorMessage>Tagged content (parent struct element 488 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[103]{mcid:98}</context>
+              <errorMessage>Tagged content (parent struct element 555 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[11]{mcid:5}</context>
+              <errorMessage>Tagged content (parent struct element 336 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[15]{mcid:9}</context>
+              <errorMessage>Tagged content (parent struct element 339 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[18]{mcid:11}</context>
+              <errorMessage>Tagged content (parent struct element 341 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[21]{mcid:13}</context>
+              <errorMessage>Tagged content (parent struct element 343 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[24]{mcid:15}</context>
+              <errorMessage>Tagged content (parent struct element 345 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[27]{mcid:17}</context>
+              <errorMessage>Tagged content (parent struct element 347 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[30]{mcid:19}</context>
+              <errorMessage>Tagged content (parent struct element 349 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[33]{mcid:21}</context>
+              <errorMessage>Tagged content (parent struct element 351 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[34]{mcid:22}</context>
+              <errorMessage>Tagged content (parent struct element 352 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[37]{mcid:24}</context>
+              <errorMessage>Tagged content (parent struct element 354 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[39]{mcid:26}</context>
+              <errorMessage>Tagged content (parent struct element 356 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[41]{mcid:28}</context>
+              <errorMessage>Tagged content (parent struct element 358 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[43]{mcid:30}</context>
+              <errorMessage>Tagged content (parent struct element 360 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[45]{mcid:32}</context>
+              <errorMessage>Tagged content (parent struct element 362 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[55]{mcid:41}</context>
+              <errorMessage>Tagged content (parent struct element 370 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](33 0 obj PDPage)/contentStream[0](1789 0 obj PDSemanticContentStream)/content[92]{mcid:76}</context>
+              <errorMessage>Tagged content (parent struct element 401 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](35 0 obj PDPage)/contentStream[0](1788 0 obj PDSemanticContentStream)/content[22]{mcid:18}</context>
+              <errorMessage>Tagged content (parent struct element 293 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](35 0 obj PDPage)/contentStream[0](1788 0 obj PDSemanticContentStream)/content[46]{mcid:68}</context>
+              <errorMessage>Tagged content (parent struct element 307 0 obj) is present inside content marked as Artifact</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752698617824" finish="1752698620332">00:00:02.508</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752698617728" finish="1752698620435">00:00:02.707</duration>
+  </batchSummary>
+</report>

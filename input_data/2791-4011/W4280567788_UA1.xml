@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="615285">
+        <name>/data/2791-4011/W4280567788.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="94" failedRules="12" passedChecks="100809" failedChecks="83">
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](99 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="1" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](101 0 obj PDStructTreeRoot)/K[0](103 0 obj SEDocument Document)/K[0](140 0 obj SEArt Article)/K[6](146 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](99 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="3" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/content[58]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[17]/xObject[0]/contentStream[0](903 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](3 0 obj PDSemanticContentStream)/operators[17]/xObject[0]/contentStream[0](53 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="1" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[14](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/operators[369]/font[0](GOHOXG+ArialMT)/DescendantFonts[0](GOHOXG+ArialMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.20" testNumber="2" status="failed" failedChecks="18" tags="syntax">
+            <description>The content of Form XObjects shall be incorporated into structure elements according to ISO 32000-1:2008, 14.7.2</description>
+            <object>PDXForm</object>
+            <test>isUniqueSemanticParent == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[2](4 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/contentStream[0](11 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](12 0 obj PDPage)/contentStream[0](13 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](14 0 obj PDPage)/contentStream[0](15 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](21 0 obj PDPage)/contentStream[0](22 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](25 0 obj PDPage)/contentStream[0](26 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](27 0 obj PDPage)/contentStream[0](28 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](40 0 obj PDPage)/contentStream[0](41 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](42 0 obj PDPage)/contentStream[0](43 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/contentStream[0](46 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/contentStream[0](49 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](50 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/operators[2]/xObject[0]</context>
+              <errorMessage>Form XObject contains MCIDs and is referenced more than once</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="34" status="failed" failedChecks="18" tags="lang,text">
+            <description>Natural language for text in page content shall be determined</description>
+            <object>SETextItem</object>
+            <test>gContainsCatalogLang == true || Lang != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[2](4 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](6 0 obj PDPage)/contentStream[0](7 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](8 0 obj PDPage)/contentStream[0](9 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](10 0 obj PDPage)/contentStream[0](11 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](12 0 obj PDPage)/contentStream[0](13 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](14 0 obj PDPage)/contentStream[0](15 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](19 0 obj PDPage)/contentStream[0](20 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](21 0 obj PDPage)/contentStream[0](22 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](23 0 obj PDPage)/contentStream[0](24 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](25 0 obj PDPage)/contentStream[0](26 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](27 0 obj PDPage)/contentStream[0](28 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](29 0 obj PDPage)/contentStream[0](30 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](31 0 obj PDPage)/contentStream[0](32 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](40 0 obj PDPage)/contentStream[0](41 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](42 0 obj PDPage)/contentStream[0](43 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/contentStream[0](46 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/contentStream[0](49 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](50 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/content[1]/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = dictionary(size = 1), DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="13" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/annots[0](874 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/annots[1](875 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[0](57 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[0](73 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[1](72 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[2](71 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[3](70 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[4](69 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[0](83 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[1](82 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[2](81 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[3](80 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[4](79 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="13" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/annots[0](874 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/annots[1](875 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[0](57 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[0](73 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[1](72 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[2](71 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[3](70 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)/annots[4](69 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[0](83 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[1](82 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[2](81 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[3](80 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)/annots[4](79 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.3" testNumber="1" status="failed" failedChecks="4" tags="page">
+            <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S</description>
+            <object>PDPage</object>
+            <test>containsAnnotations == false || Tabs == 'S'</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[17](44 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[18](47 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="1" status="failed" failedChecks="9" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not</description>
+            <object>PDType1Font</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || CharSet == null || charSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](902 0 obj PDSemanticContentStream)/operators[12]/font[0](UZUMLE+LegacySans-Book)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[11]/font[0](VNUFZC+LegacySans-Bold)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[27]/font[0](SLGNJI+ZapfDingbats)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[38]/font[0](SLGNJI+LegacySans-Ultra)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[66]/font[0](QIHWHM+LegacySans-BoldItalic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[88]/font[0](NBTERS+LegacySans-BookItalic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](872 0 obj PDPage)/contentStream[0]/operators[389]/font[0](UZUMLE+LegacySans-Book)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](3 0 obj PDSemanticContentStream)/operators[2]/xObject[0]/contentStream[0](54 0 obj PDSemanticContentStream)/operators[12]/font[0](UZUMLE+LegacySans-Book)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](4 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[236]/font[0](IWGAZC+LegacySans-Medium)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752684307913" finish="1752684310148">00:00:02.235</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752684307809" finish="1752684310233">00:00:02.424</duration>
+  </batchSummary>
+</report>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="136090">
+        <name>/data/1937-8904/W3159789801.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="142" failedRules="4" passedChecks="8368" failedChecks="9">
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="2" status="failed" failedChecks="4">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isValueTypeCorrect == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]/Properties[1](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]/Properties[4](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:DerivedFrom)</context>
+              <errorMessage>XMP property does not correspond to type resourceref</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]/Properties[5](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:History)</context>
+              <errorMessage>XMP property does not correspond to type seq resourceevent</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]/Properties[12](http://ns.adobe.com/pdf/1.3/ - pdf:Trapped)</context>
+              <errorMessage>XMP property does not correspond to type null</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="2">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](19 0 obj PDPage)/contentStream[0]/operators[16]/font[0](QGXFCC+NotoSans-ExtraCondensedThin)/DescendantFonts[0](QGXFCC+NotoSans-ExtraCondensedThin)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](19 0 obj PDPage)/contentStream[0]/operators[79]/font[0](SZSMEY+NotoSerif-Regular)/DescendantFonts[0](SZSMEY+NotoSerif-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="1" status="failed" failedChecks="2">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isPredefinedInXMP2005 == true || isDefinedInMainPackage == true || isDefinedInCurrentPackage == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]/Properties[1](http://ns.adobe.com/xap/1.0/mm/ - xmpMM:OriginalDocumentID)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](15 0 obj PDMetadata)/XMPPackage[0]/Properties[12](http://ns.adobe.com/pdf/1.3/ - pdf:Trapped)</context>
+              <errorMessage>XMP property is either not predefined, or is not defined in any XMP extension schema</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752671078493" finish="1752671079826">00:00:01.333</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752671078377" finish="1752671079870">00:00:01.493</duration>
+  </batchSummary>
+</report>

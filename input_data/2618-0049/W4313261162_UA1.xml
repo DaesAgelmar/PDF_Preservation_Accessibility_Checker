@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="376915">
+        <name>/data/2618-0049/W4313261162.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="101" failedRules="5" passedChecks="73885" failedChecks="1820">
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="5" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](89 0 obj PDSemanticContentStream)/operators[13]/font[0](HIEGLF+ArialMT)/DescendantFonts[0](HIEGLF+ArialMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/operators[17]/font[0](BFQBLR+Calibri-Bold)/DescendantFonts[0](BFQBLR+Calibri-Bold)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/operators[38]/font[0](ZSNKJV+Calibri-BoldItalic)/DescendantFonts[0](ZSNKJV+Calibri-BoldItalic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/operators[43]/font[0](EUCOBL+Calibri-Italic)/DescendantFonts[0](EUCOBL+Calibri-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/operators[114]/font[0](DARNNN+Calibri)/DescendantFonts[0](DARNNN+Calibri)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](40 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](40 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="1812" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[3]{mcid:8873}/contentItem[0]{mcid:8873}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[3]{mcid:8873}/contentItem[1]{mcid:8873}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[3]{mcid:8873}/contentItem[2]{mcid:8873}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[5]{mcid:8874}/contentItem[0]{mcid:8874}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[6]{mcid:8875}/contentItem[0]{mcid:8875}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[7]{mcid:8876}/contentItem[0]{mcid:8876}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[8]{mcid:8877}/contentItem[0]{mcid:8877}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[9]{mcid:8878}/contentItem[0]{mcid:8878}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[10]{mcid:8879}/contentItem[0]{mcid:8879}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[11]{mcid:8880}/contentItem[0]{mcid:8880}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[12]{mcid:8881}/contentItem[0]{mcid:8881}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[13]{mcid:8882}/contentItem[0]{mcid:8882}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[14]{mcid:8883}/contentItem[0]{mcid:8883}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[15]{mcid:8884}/contentItem[0]{mcid:8884}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[16]{mcid:8885}/contentItem[0]{mcid:8885}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[17]{mcid:8886}/contentItem[0]{mcid:8886}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[18]{mcid:8887}/contentItem[0]{mcid:8887}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[19]{mcid:8888}/contentItem[0]{mcid:8888}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[20]{mcid:8889}/contentItem[0]{mcid:8889}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[21]{mcid:8890}/contentItem[0]{mcid:8890}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[23]{mcid:8891}/contentItem[0]{mcid:8891}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[23]{mcid:8891}/contentItem[1]{mcid:8891}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[23]{mcid:8891}/contentItem[2]{mcid:8891}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[24]{mcid:8892}/contentItem[0]{mcid:8892}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[24]{mcid:8892}/contentItem[1]{mcid:8892}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[24]{mcid:8892}/contentItem[2]{mcid:8892}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[24]{mcid:8892}/contentItem[3]{mcid:8892}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[26]{mcid:8893}/contentItem[0]{mcid:8893}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[27]{mcid:8894}/contentItem[0]{mcid:8894}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[28]{mcid:8895}/contentItem[0]{mcid:8895}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[29]{mcid:8896}/contentItem[0]{mcid:8896}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[30]{mcid:8897}/contentItem[0]{mcid:8897}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[32]{mcid:8898}/contentItem[0]{mcid:8898}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[32]{mcid:8898}/contentItem[1]{mcid:8898}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[32]{mcid:8898}/contentItem[2]{mcid:8898}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[32]{mcid:8898}/contentItem[3]{mcid:8898}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[33]{mcid:8899}/contentItem[0]{mcid:8899}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[33]{mcid:8899}/contentItem[1]{mcid:8899}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[33]{mcid:8899}/contentItem[2]{mcid:8899}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[33]{mcid:8899}/contentItem[3]{mcid:8899}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[35]{mcid:8900}/contentItem[0]{mcid:8900}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[37]{mcid:8901}/contentItem[0]{mcid:8901}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[37]{mcid:8901}/contentItem[1]{mcid:8901}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[37]{mcid:8901}/contentItem[2]{mcid:8901}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[37]{mcid:8901}/contentItem[3]{mcid:8901}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[39]{mcid:8902}/contentItem[0]{mcid:8902}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[40]{mcid:8903}/contentItem[0]{mcid:8903}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[42]{mcid:8904}/contentItem[0]{mcid:8904}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[42]{mcid:8904}/contentItem[1]{mcid:8904}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[42]{mcid:8904}/contentItem[2]{mcid:8904}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[42]{mcid:8904}/contentItem[3]{mcid:8904}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[43]{mcid:8905}/contentItem[0]{mcid:8905}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[43]{mcid:8905}/contentItem[1]{mcid:8905}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[43]{mcid:8905}/contentItem[2]{mcid:8905}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[43]{mcid:8905}/contentItem[3]{mcid:8905}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[44]{mcid:8906}/contentItem[0]{mcid:8906}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[44]{mcid:8906}/contentItem[1]{mcid:8906}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[44]{mcid:8906}/contentItem[2]{mcid:8906}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[44]{mcid:8906}/contentItem[3]{mcid:8906}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[46]{mcid:8907}/contentItem[0]{mcid:8907}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[48]{mcid:8908}/contentItem[0]{mcid:8908}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[48]{mcid:8908}/contentItem[1]{mcid:8908}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[48]{mcid:8908}/contentItem[2]{mcid:8908}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[50]{mcid:8909}/contentItem[0]{mcid:8909}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[51]{mcid:8910}/contentItem[0]{mcid:8910}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[52]{mcid:8911}/contentItem[0]{mcid:8911}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[54]{mcid:8912}/contentItem[0]{mcid:8912}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[54]{mcid:8912}/contentItem[1]{mcid:8912}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[54]{mcid:8912}/contentItem[2]{mcid:8912}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[54]{mcid:8912}/contentItem[3]{mcid:8912}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[56]{mcid:8913}/contentItem[0]{mcid:8913}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[58]{mcid:8914}/contentItem[0]{mcid:8914}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[58]{mcid:8914}/contentItem[1]{mcid:8914}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[58]{mcid:8914}/contentItem[2]{mcid:8914}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[58]{mcid:8914}/contentItem[3]{mcid:8914}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[58]{mcid:8914}/contentItem[4]{mcid:8914}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[60]{mcid:8915}/contentItem[0]{mcid:8915}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[0]{mcid:8916}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[1]{mcid:8916}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[2]{mcid:8916}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[3]{mcid:8916}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[4]{mcid:8916}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[5]{mcid:8916}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[62]{mcid:8916}/contentItem[6]{mcid:8916}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[63]{mcid:8917}/contentItem[0]{mcid:8917}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[63]{mcid:8917}/contentItem[1]{mcid:8917}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[63]{mcid:8917}/contentItem[2]{mcid:8917}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[65]{mcid:8918}/contentItem[0]{mcid:8918}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[66]{mcid:8919}/contentItem[0]{mcid:8919}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[68]{mcid:8920}/contentItem[0]{mcid:8920}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[68]{mcid:8920}/contentItem[1]{mcid:8920}/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[68]{mcid:8920}/contentItem[2]{mcid:8920}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[68]{mcid:8920}/contentItem[3]{mcid:8920}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[70]{mcid:8921}/contentItem[0]{mcid:8921}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[71]{mcid:8922}/contentItem[0]{mcid:8922}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[72]{mcid:8923}/contentItem[0]{mcid:8923}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[73]{mcid:8924}/contentItem[0]{mcid:8924}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[74]{mcid:8925}/contentItem[0]{mcid:8925}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/content[75]{mcid:8926}/contentItem[0]{mcid:8926}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](62 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](89 0 obj PDSemanticContentStream)/content[2]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="11" status="failed" failedChecks="1" tags="structure">
+            <description>The logical structure of the conforming file shall be described by a structure hierarchy rooted in the StructTreeRoot entry of the document catalog dictionary, as described in ISO 32000-1:2008, 14.7</description>
+            <object>PDDocument</object>
+            <test>containsStructTreeRoot == true</test>
+            <check status="failed">
+              <context>root/document[0]</context>
+              <errorMessage>StructTreeRoot entry is not present in the document catalog</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752665572801" finish="1752665575480">00:00:02.679</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752665572642" finish="1752665575563">00:00:02.921</duration>
+  </batchSummary>
+</report>

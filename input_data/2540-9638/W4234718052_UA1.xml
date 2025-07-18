@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="1234618">
+        <name>/data/2540-9638/W4234718052.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="90" failedRules="16" passedChecks="8682" failedChecks="2700">
+          <rule specification="ISO 14289-1:2014" clause="7.21.3.2" testNumber="1" status="failed" failedChecks="3" tags="font">
+            <description>ISO 32000-1:2008, 9.7.4, Table 117 requires that all embedded Type 2 CIDFonts in the CIDFont dictionary shall contain a CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices or the name Identity, as described in ISO 32000-1:2008, 9.7.4, Table 117</description>
+            <object>PDCIDFont</object>
+            <test>Subtype != "CIDFontType2" || CIDToGIDMap != null || containsFontFile == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/operators[121]/font[0](AAAAAI+Calibri-Bold)/DescendantFonts[0](AAAAAI+Calibri-Bold)</context>
+              <errorMessage>A Type 2 CIDFont dictionary has missing or invalid CIDToGIDMap entry</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/contentStream[0](85 0 obj PDSemanticContentStream)/operators[369]/font[0](AAAABE+Calibri-Bold)/DescendantFonts[0](AAAABE+Calibri-Bold)</context>
+              <errorMessage>A Type 2 CIDFont dictionary has missing or invalid CIDToGIDMap entry</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/contentStream[0](85 0 obj PDSemanticContentStream)/operators[834]/font[0](AAAABG+TimesNewRomanPSMT)/DescendantFonts[0](AAAABG+TimesNewRomanPSMT)</context>
+              <errorMessage>A Type 2 CIDFont dictionary has missing or invalid CIDToGIDMap entry</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.3" testNumber="1" status="failed" failedChecks="2" tags="page">
+            <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S</description>
+            <object>PDPage</object>
+            <test>containsAnnotations == false || Tabs == 'S'</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="9" status="failed" failedChecks="1" tags="metadata">
+            <description>The Metadata stream in the document's catalog dictionary shall contain a dc:title entry, where dc is the recommended prefix for the Dublin Core metadata schema as defined in the XMP specification, which clearly identifies the document</description>
+            <object>MainXMPPackage</object>
+            <test>dc_title != null</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](2 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>Metadata stream does not contain dc:title</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="12" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/annots[0](67 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/annots[1](68 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[0](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[1](100 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[2](101 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[3](102 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[4](103 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[5](104 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[6](105 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[7](106 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[8](107 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[9](108 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.7" testNumber="1" status="failed" failedChecks="168" tags="font">
+            <description>The Font dictionary of all fonts shall define the map of all used character codes to Unicode values, either via a ToUnicode entry, or other mechanisms as defined in ISO 14289-1, 7.21.7</description>
+            <object>Glyph</object>
+            <test>toUnicode != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[0](AAAAAB+Ebrima AAAAAB+Ebrima 309 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[2](AAAAAB+Ebrima AAAAAB+Ebrima 343 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[4](AAAAAB+Ebrima AAAAAB+Ebrima 114 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[5](AAAAAB+Ebrima AAAAAB+Ebrima 458 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[7](AAAAAB+Ebrima AAAAAB+Ebrima 3 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[8](AAAAAB+Ebrima AAAAAB+Ebrima 443 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[9](AAAAAB+Ebrima AAAAAB+Ebrima 533 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[10](AAAAAB+Ebrima AAAAAB+Ebrima 482 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[11](AAAAAB+Ebrima AAAAAB+Ebrima 507 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[13](AAAAAB+Ebrima AAAAAB+Ebrima 295 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[69]/usedGlyphs[14](AAAAAB+Ebrima AAAAAB+Ebrima 4 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[0](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 45 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[9](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 77 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[15](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 79 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[19](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 51 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[23](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 88 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[25](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 87 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[27](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 78 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[31](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 15 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[33](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 44 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[35](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 73 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[36](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 82 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[38](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 80 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[43](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 71 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[46](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 3 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[47](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 46 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[48](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 72 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[50](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 85 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[51](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 86 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[52](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 76 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[53](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 83 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[54](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 68 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[74]/usedGlyphs[55](AAAAAC+TimesNewRomanPSMT AAAAAC+TimesNewRomanPSMT 81 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[1](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 51 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[2](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 72 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[3](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 80 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[6](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 73 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[9](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 87 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[10](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 68 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[11](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 81 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[13](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 37 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[15](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 78 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[16](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 88 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[17](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 3 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[110]/usedGlyphs[18](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 55 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[15](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 71 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[20](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 85 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[21](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 83 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[31](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 41 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[35](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 79 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[38](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 86 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[40](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 40 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[44](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 82 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[115]/usedGlyphs[46](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 76 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[120]/usedGlyphs[11](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 56 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[120]/usedGlyphs[14](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 89 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[120]/usedGlyphs[23](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 42 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[120]/usedGlyphs[26](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 77 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[120]/usedGlyphs[28](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 75 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[120]/usedGlyphs[30](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 48 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[0](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 11 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[9](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 3 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[10](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 48 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[12](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 85 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[13](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 92 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[14](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 68 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[15](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 87 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[16](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 88 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[17](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 81 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[125]/usedGlyphs[18](AAAAAE+ArialNarrow AAAAAE+ArialNarrow 12 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[27](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 53 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[36](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 92 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[58](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 74 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[63](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 11 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[65](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 44 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[66](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 49 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[67](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 12 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[130]/usedGlyphs[69](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 54 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[135]/usedGlyphs[0](AAAAAD+ArialNarrow-Bold AAAAAD+ArialNarrow-Bold 46 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[140]/usedGlyphs[0](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 50 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[140]/usedGlyphs[1](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 83 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[140]/usedGlyphs[2](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 72 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[140]/usedGlyphs[3](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 81 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[140]/usedGlyphs[4](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 3 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[0](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 36 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[2](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 70 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[3](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 75 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[5](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 89 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[7](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 79 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[9](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 44 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[11](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 73 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[13](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 85 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[15](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 68 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[17](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 76 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[18](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 82 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[21](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 54 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[22](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 92 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[23](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 86 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[24](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 87 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[145]/usedGlyphs[26](AAAAAF+ArialNarrow-BoldItalic AAAAAF+ArialNarrow-BoldItalic 80 0  0 true)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="22" status="failed" failedChecks="2" tags="structure,lang">
+            <description>Natural language for text in Alt attribute shall be determined</description>
+            <object>PDStructElem</object>
+            <test>Alt == null || containsLang == true || parentLang != null || gContainsCatalogLang == true</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[0](111 0 obj SEFigure Figure)</context>
+              <errorMessage>Natural language for text in Alt attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[6](117 0 obj SEFigure Figure)</context>
+              <errorMessage>Natural language for text in Alt attribute cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="34" status="failed" failedChecks="1231" tags="lang,text">
+            <description>Natural language for text in page content shall be determined</description>
+            <object>SETextItem</object>
+            <test>gContainsCatalogLang == true || Lang != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[4]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[5]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[6]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[7]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[8]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[9]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[10]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[11]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[12]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[13]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[14]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[15]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[16]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[17]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[18]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[19]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[20]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[21]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[22]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[23]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[24]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[25]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[26]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[27]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[28]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[29]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[30]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[31]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[32]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[33]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[34]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[35]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[36]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[37]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[38]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[39]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[40]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[41]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[42]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[43]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[44]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[45]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[46]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[47]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[48]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[49]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[50]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[0]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[1]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[2]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[3]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[4]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[5]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[6]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[7]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[8]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[9]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[10]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[11]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[12]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[13]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[14]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[15]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[16]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[17]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[18]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[19]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[20]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[21]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[22]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[23]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[24]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[25]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[26]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[27]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[28]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[29]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[30]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[31]{mcid:2}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[4]{mcid:3}/contentItem[0]{mcid:3}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[5]{mcid:4}/contentItem[0]{mcid:4}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[6]{mcid:5}/contentItem[0]{mcid:5}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[0]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[1]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[2]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[3]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[4]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[5]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[6]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[7]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[8]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[9]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[10]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[11]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[12]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[13]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[14]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[15]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[16]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[17]{mcid:6}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="14" status="failed" failedChecks="2" tags="structure,table">
+            <description>If Table element contains THead kid, Table element should contain one or more TBody kids</description>
+            <object>SETable</object>
+            <test>kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'THead').length == 0 || kidsStandardTypes.split('&amp;').filter(elem =&gt; elem == 'TBody').length &gt; 0</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[43](154 0 obj SETable Table)</context>
+              <errorMessage>Table element contains THead kid, but does not contain TBody kids</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[47](158 0 obj SETable Table)</context>
+              <errorMessage>Table element contains THead kid, but does not contain TBody kids</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="12" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/annots[0](67 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/annots[1](68 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[0](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[1](100 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[2](101 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[3](102 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[4](103 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[5](104 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[6](105 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[7](106 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[8](107 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[9](108 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="2" status="failed" failedChecks="5" tags="lang">
+            <description>Natural language in the Outline entries shall be determined</description>
+            <object>PDOutline</object>
+            <test>gContainsCatalogLang == true</test>
+            <check status="failed">
+              <context>root/document[0]/Outlines[0](outline 312 0)</context>
+              <errorMessage>Natural language in the Outline entries cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/Outlines[1](outline 301 0)</context>
+              <errorMessage>Natural language in the Outline entries cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/Outlines[2](outline 309 0)</context>
+              <errorMessage>Natural language in the Outline entries cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/Outlines[3](outline 306 0)</context>
+              <errorMessage>Natural language in the Outline entries cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/Outlines[4](outline 315 0)</context>
+              <errorMessage>Natural language in the Outline entries cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](2 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="2" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[0](111 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[6](117 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = null, DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="1" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](110 0 obj PDStructTreeRoot)/K[0](109 0 obj SEDocument Document)/K[45](156 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 2 span different number of columns</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="1245" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[1]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[2]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[3]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[4]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[5]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[6]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[7]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[8]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[9]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[10]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[11]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[12]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[13]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[14]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[15]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[16]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[17]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[18]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[19]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[20]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[21]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[22]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[23]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[24]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[25]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[26]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[27]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[28]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[29]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[30]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[31]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[32]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[33]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[34]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[35]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[36]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[37]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[38]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[39]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[40]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[41]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[42]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[43]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[44]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[45]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[46]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[47]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[48]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[49]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/content[0]/contentItem[50]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[82]/xObject[0]/contentStream[0](11 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[89]/xObject[0]/contentStream[0](13 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[96]/xObject[0]/contentStream[0](15 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](3 0 obj PDPage)/contentStream[0](5 0 obj PDSemanticContentStream)/operators[103]/xObject[0]/contentStream[0](17 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[1]{mcid:0}/contentItem[0]{mcid:0}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[1]{mcid:0}/contentItem[1]{mcid:0}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[2]{mcid:1}/contentItem[0]{mcid:1}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[2]{mcid:1}/contentItem[1]{mcid:1}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[0]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[1]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[2]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[3]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[4]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[5]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[6]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[7]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[8]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[9]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[10]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[11]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[12]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[13]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[14]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[15]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[16]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[17]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[18]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[19]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[20]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[21]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[22]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[23]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[24]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[25]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[26]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[27]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[28]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[29]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[30]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[3]{mcid:2}/contentItem[31]{mcid:2}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[4]{mcid:3}/contentItem[0]{mcid:3}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[5]{mcid:4}/contentItem[0]{mcid:4}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[6]{mcid:5}/contentItem[0]{mcid:5}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[0]{mcid:6}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[1]{mcid:6}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[2]{mcid:6}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[3]{mcid:6}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[4]{mcid:6}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/content[7]{mcid:6}/contentItem[5]{mcid:6}</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="1" status="failed" failedChecks="12" tags="annotation">
+            <description>Links shall be tagged according to ISO 32000-1:2008, 14.8.4.4.2, Link Element</description>
+            <object>PDLinkAnnot</object>
+            <test>structParentStandardType == 'Link' || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/annots[0](67 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](54 0 obj PDPage)/annots[1](68 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[0](99 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[1](100 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[2](101 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[3](102 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[4](103 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[5](104 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[6](105 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[7](106 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[8](107 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](84 0 obj PDPage)/annots[9](108 0 obj PDLinkAnnot)</context>
+              <errorMessage>A Link annotation is an Artifact or is nested within null tag (standard type = null) instead of Link</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752668547695" finish="1752668549423">00:00:01.728</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752668547593" finish="1752668549527">00:00:01.934</duration>
+  </batchSummary>
+</report>

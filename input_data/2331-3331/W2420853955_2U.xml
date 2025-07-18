@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="275858">
+        <name>/data/2331-3331/W2420853955.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="143" failedRules="3" passedChecks="153783" failedChecks="12">
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="1">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[2](865 0 obj PDPage)/contentStream[0](967 0 obj PDContentStream)/operators[55]/font[0](ZOCRRX+StoneSerif)/DescendantFonts[0](ZOCRRX+StoneSerif)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](70 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="1" status="failed" failedChecks="10">
+            <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not</description>
+            <object>PDType1Font</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || CharSet == null || charSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[5]/font[0](OKMFOT+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[10]/font[0](OKMFOT+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[35]/font[0](OKMFOT+StoneSans-Semibold)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[40]/font[0](OKMFOT+StoneSerif)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[204]/font[0](OKMFOT+StoneSans-SemiboldItalic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[209]/font[0](OKMFOT+StoneSans-Italic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](863 0 obj PDPage)/contentStream[0](965 0 obj PDContentStream)/operators[275]/font[0](OKMFOT+StoneSerif-Italic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](864 0 obj PDPage)/contentStream[0](966 0 obj PDContentStream)/operators[5]/font[0](OKMFOT+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](864 0 obj PDPage)/contentStream[0](966 0 obj PDContentStream)/operators[11]/font[0](OKMFOT+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](864 0 obj PDPage)/contentStream[0](966 0 obj PDContentStream)/operators[420]/font[0](OKMFOT+StoneSerif-Semibold)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752688708148" finish="1752688710335">00:00:02.187</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752688708044" finish="1752688710387">00:00:02.343</duration>
+  </batchSummary>
+</report>

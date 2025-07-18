@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="404776">
+        <name>/data/2540-9638/W4390453734.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="99" failedRules="7" passedChecks="40179" failedChecks="12">
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="1" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/annots[0](49 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = null, DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="43" status="failed" failedChecks="1" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan == null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](52 0 obj SEPart Part)/K[34](106 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns (3 and 1 respectively)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="8" status="failed" failedChecks="1" tags="metadata">
+            <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML</description>
+            <object>PDDocument</object>
+            <test>containsMetadata == true</test>
+            <check status="failed">
+              <context>root/document[0]</context>
+              <errorMessage>The document catalog dictionary doesn't contain metadata key or metadata stream dictionary does not contain either entry Type with value /Metadata or entry Subtype with value /XML</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="10" status="failed" failedChecks="3" tags="structure,table">
+            <description>TR element may contain only TH and TD elements</description>
+            <object>SETR</object>
+            <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](52 0 obj SEPart Part)/K[34](106 0 obj SETable Table)/K[0](105 0 obj SETBody TBody)/K[0](104 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](52 0 obj SEPart Part)/K[34](106 0 obj SETable Table)/K[0](105 0 obj SETBody TBody)/K[1](114 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](52 0 obj SEPart Part)/K[34](106 0 obj SETable Table)/K[0](105 0 obj SETBody TBody)/K[22](198 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="1" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/annots[0](49 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.1" testNumber="1" status="failed" failedChecks="4" tags="font">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/operators[377]/font[0](Times New Roman)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/operators[396]/font[0](Times New Roman,Bold)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/operators[598]/font[0](Times New Roman,Italic)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](55 0 obj PDSemanticContentStream)/operators[640]/font[0](Times New Roman,BoldItalic)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752668645961" finish="1752668648228">00:00:02.267</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752668645815" finish="1752668648280">00:00:02.465</duration>
+  </batchSummary>
+</report>

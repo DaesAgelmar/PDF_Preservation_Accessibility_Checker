@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="137978">
+        <name>/data/2331-3331/W4255309355.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="142" failedRules="4" passedChecks="22174" failedChecks="4">
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.2" testNumber="2" status="failed" failedChecks="1">
+            <description>Overprint mode (as set by the OPM value in an ExtGState dictionary) shall not be one (1) when an ICCBased CMYK colour space is used for stroke and overprinting for stroke is set to true, or when ICCBased CMYK colour space is used for fill and overprinting for fill is set to true, or both</description>
+            <object>PDICCBasedCMYK</object>
+            <test>overprintFlag == false || OPM == 0</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](43 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](78 0 obj PDContentStream)/operators[12]/fillCS[0](54 0 obj PDICCBasedCMYK 1 true)</context>
+              <errorMessage>Overprint mode (OPM) is set to 1 instead of 0 when an ICCBased CMYK colour space is used with enabled overprinting</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="2" status="failed" failedChecks="1">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isValueTypeCorrect == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](37 0 obj PDMetadata)/XMPPackage[0]/Properties[13](http://purl.org/dc/elements/1.1/ - dc:creator)</context>
+              <errorMessage>XMP property does not correspond to type seq propername</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="3" status="failed" failedChecks="1">
+            <description>A Level A conforming file shall specify the value of "pdfaid:conformance" as A. A Level B conforming file shall specify the value of "pdfaid:conformance" as B. A Level U conforming file shall specify the value of "pdfaid:conformance" as U</description>
+            <object>PDFAIdentification</object>
+            <test>conformance == "U" || conformance == "A"</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](37 0 obj PDMetadata)/XMPPackage[0]/PDFAIdentification[0]</context>
+              <errorMessage>The "conformance" property of the PDF/A Identification Schema is B instead of "U" for PDF/A-2U conforming file</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="2" status="failed" failedChecks="1">
+            <description>The value of "pdfaid:part" shall be the part number of ISO 19005 to which the file conforms</description>
+            <object>PDFAIdentification</object>
+            <test>part == 2</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](37 0 obj PDMetadata)/XMPPackage[0]/PDFAIdentification[0]</context>
+              <errorMessage>The "part" property of the PDF/A Identification Schema is 1 instead of 2 for PDF/A-2 conforming file</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752688943326" finish="1752688944441">00:00:01.115</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752688943253" finish="1752688944471">00:00:01.218</duration>
+  </batchSummary>
+</report>

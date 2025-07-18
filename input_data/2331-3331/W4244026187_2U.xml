@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="62969">
+        <name>/data/2331-3331/W4244026187.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="141" failedRules="5" passedChecks="29785" failedChecks="16">
+          <rule specification="ISO 19005-2:2011" clause="6.3.2" testNumber="1" status="failed" failedChecks="3">
+            <description>Except for annotation dictionaries whose Subtype value is Popup, all annotation dictionaries shall contain the F key</description>
+            <object>PDAnnot</object>
+            <test>Subtype == "Popup" || F != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[0](19 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[1](20 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/annots[2](21 0 obj PDLinkAnnot)</context>
+              <errorMessage>A dictionary of Link annotation does not contain F key</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.3.1" testNumber="2" status="failed" failedChecks="1">
+            <description>All properties specified in XMP form shall use either the predefined schemas defined in the XMP Specification, ISO 19005-1 or this part of ISO 19005, or any extension schemas that comply with 6.6.2.3.2</description>
+            <object>XMPProperty</object>
+            <test>isValueTypeCorrect == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](14 0 obj PDMetadata)/XMPPackage[0]/Properties[6](http://purl.org/dc/elements/1.1/ - dc:creator)</context>
+              <errorMessage>XMP property does not correspond to type seq propername</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="4" status="failed" failedChecks="2">
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, or if a PDF/A OutputIntent is present</description>
+            <object>PDDeviceGray</object>
+            <test>gOutputCS != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[17]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[17]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="1" status="failed" failedChecks="9">
+            <description>If the FontDescriptor dictionary of an embedded Type 1 font contains a CharSet string, then it shall list the character names of all glyphs present in the font program, regardless of whether a glyph in the font is referenced or used by the PDF or not</description>
+            <object>PDType1Font</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || CharSet == null || charSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](49 0 obj PDContentStream)/operators[11]/font[0](UMSTKW+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[10]/font[0](UMSTKW+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[19]/xObject[0]/contentStream[0](48 0 obj PDContentStream)/operators[11]/font[0](UMSTKW+StoneSans)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[27]/font[0](UMSTKW+StoneSerif)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[32]/font[0](UMSTKW+StoneSerif-Italic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](36 0 obj PDPage)/contentStream[0]/operators[366]/font[0](TEINWY+StoneSans-Semibold)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[252]/font[0](TEINWY+StoneSans-Bold)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[258]/font[0](UMSTKW+StoneSerif-Semibold)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[260]/font[0](TEINWY+StoneSerif-SemiboldItalic)</context>
+              <errorMessage>A CharSet entry in the Descriptor dictionary of a Type1 font incorrectly lists glyphs present in the font program</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](14 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752688755115" finish="1752688756581">00:00:01.466</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752688755012" finish="1752688756633">00:00:01.621</duration>
+  </batchSummary>
+</report>

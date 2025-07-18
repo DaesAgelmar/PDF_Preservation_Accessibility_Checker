@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="2181229">
+        <name>/data/1695-5498/W4311067559.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="141" failedRules="5" passedChecks="173508" failedChecks="1184">
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="1" status="failed" failedChecks="1">
+            <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML</description>
+            <object>PDDocument</object>
+            <test>containsMetadata == true</test>
+            <check status="failed">
+              <context>root/document[0]</context>
+              <errorMessage>The document catalog dictionary doesn't contain metadata key or metadata stream dictionary does not contain either entry Type with value /Metadata or entry Subtype with value /XML</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.3.2" testNumber="1" status="failed" failedChecks="1">
+            <description>ISO 32000-1:2008, 9.7.4, Table 117 requires that all embedded Type 2 CIDFonts in the CIDFont dictionary shall contain a CIDToGIDMap entry that shall be a stream mapping from CIDs to glyph indices or the name Identity, as described in ISO 32000-1:2008, 9.7.4, Table 117</description>
+            <object>PDCIDFont</object>
+            <test>Subtype != "CIDFontType2" || CIDToGIDMap != null || containsFontFile == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[175]/font[0](AAAABO+AsapCondensed-SemiBold)/DescendantFonts[0](AAAABO+AsapCondensed-SemiBold)</context>
+              <errorMessage>A Type 2 CIDFont dictionary has missing or invalid CIDToGIDMap entry</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.8" testNumber="3" status="failed" failedChecks="11">
+            <description>If an Image dictionary contains the Interpolate key, its value shall be false. For an inline image, the I key shall have a value of false</description>
+            <object>PDXImage</object>
+            <test>Interpolate == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[42]/xObject[0](8 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[52]/xObject[0](9 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[115]/xObject[0](18 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](75 0 obj PDPage)/contentStream[0](76 0 obj PDContentStream)/operators[572]/xObject[0](80 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](81 0 obj PDPage)/contentStream[0](82 0 obj PDContentStream)/operators[592]/xObject[0](84 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](87 0 obj PDPage)/contentStream[0](88 0 obj PDContentStream)/operators[712]/xObject[0](90 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](91 0 obj PDPage)/contentStream[0](92 0 obj PDContentStream)/operators[585]/xObject[0](94 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[1098]/xObject[0](104 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[1121]/xObject[0](105 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[1133]/xObject[0](106 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](124 0 obj PDPage)/contentStream[0](125 0 obj PDContentStream)/operators[552]/xObject[0](127 0 obj PDXImage)</context>
+              <errorMessage>The value of the Interpolate key in the Image dictionary is true</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="3" status="failed" failedChecks="1068">
+            <description>DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set or if a DeviceN-based DefaultCMYK colour space has been set when the DeviceCMYK colour space is used or the file has a PDF/A OutputIntent that contains a CMYK destination profile</description>
+            <object>PDDeviceCMYK</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "CMYK"</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[6]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[12]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[17]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[22]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[27]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[32]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[59]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[65]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[70]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[75]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[81]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[87]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[111]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[118]/colorSpace[0](19 0 obj PDSeparation)/alternate[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[133]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[138]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[145]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[152]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[159]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[166]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[173]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[180]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[187]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[194]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[201]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[208]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[215]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[222]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[229]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[236]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[243]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[250]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[257]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[264]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[285]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[290]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[297]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[304]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[458]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[463]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[470]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[477]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[495]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[500]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[507]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[514]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[521]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[528]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[535]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[540]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[545]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[550]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[555]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[560]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[565]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[570]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[575]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[580]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[585]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[592]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[606]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](2 0 obj PDPage)/contentStream[0](4 0 obj PDContentStream)/operators[611]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[6]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[12]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[17]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[34]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[39]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[50]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[55]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[62]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[69]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[76]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[83]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[90]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[97]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[104]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[111]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[118]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[125]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[132]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[139]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[146]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[153]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[160]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[167]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[174]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[181]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[188]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[195]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[202]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[209]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[216]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[223]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[230]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[237]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[244]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[251]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[258]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[265]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](50 0 obj PDPage)/contentStream[0](51 0 obj PDContentStream)/operators[272]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.7.2" testNumber="1" status="failed" failedChecks="103">
+            <description>The Font dictionary of all fonts shall define the map of all used character codes to Unicode values, either via a ToUnicode entry, or other mechanisms as defined in ISO 19005-2, 6.2.11.7.2</description>
+            <object>Glyph</object>
+            <test>toUnicode != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[327]/usedGlyphs[0](AAAABP+Exo2-Regular AAAABP+Exo2-Regular 33 0 2049348234 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[716]/usedGlyphs[0](AAAABP+Exo2-Regular AAAABP+Exo2-Regular 33 0 838800272 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[732]/usedGlyphs[0](AAAABQ+Exo2-LightItalic AAAABQ+Exo2-LightItalic 33 0 2015007762 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](97 0 obj PDPage)/contentStream[0](99 0 obj PDContentStream)/operators[748]/usedGlyphs[0](AAAABP+Exo2-Regular AAAABP+Exo2-Regular 33 0 333879495 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](124 0 obj PDPage)/contentStream[0](125 0 obj PDContentStream)/operators[71]/usedGlyphs[0](AAAABP+Exo2-Regular AAAABP+Exo2-Regular 33 0 562685863 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](124 0 obj PDPage)/contentStream[0](125 0 obj PDContentStream)/operators[80]/usedGlyphs[0](AAAABQ+Exo2-LightItalic AAAABQ+Exo2-LightItalic 33 0 1773336805 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[2983]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 678115778 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[2997]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 123674777 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3004]/usedGlyphs[0](AAAABU+Exo2-Bold AAAABU+Exo2-Bold 33 0 471004142 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3013]/usedGlyphs[0](AAAABU+Exo2-Bold AAAABU+Exo2-Bold 33 0 1833335943 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3020]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 689448569 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3027]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1472036907 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3034]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1555793073 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3041]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 46627301 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3055]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1367594377 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3090]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1395173825 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3097]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1534655921 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3111]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 291847739 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3118]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 118881143 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3125]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 463215441 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3139]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 385784873 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3174]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1620187937 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3181]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 198374825 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3195]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 125865913 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3202]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 2000410491 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3209]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1800932232 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3223]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1852821063 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3230]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1204178174 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3237]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1827212229 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3244]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 173440626 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3251]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 442205321 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3258]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1871678080 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3305]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 2082545616 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3319]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 763677574 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3326]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1906549136 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3333]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 92864491 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3347]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 196025267 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3354]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1743553655 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3361]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 635001030 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3375]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 922992444 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3382]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 886004375 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3403]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 663716901 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3417]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1260043537 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3452]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1243350866 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3466]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 456314134 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3487]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 731610911 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3494]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 642538759 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3501]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 138933223 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3508]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1774897456 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3515]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 425275537 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3522]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1564078808 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3529]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1792473683 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3536]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1441410416 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3543]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 99042020 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3550]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 391827378 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3564]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1317441269 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3571]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1908999587 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3578]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 816804727 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3585]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1738561265 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3592]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 497786326 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3599]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 611739613 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3639]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 2146303527 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3646]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 797416363 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3660]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1186989416 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3667]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1456265041 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3674]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1166361824 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3688]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 761680655 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3695]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 488669101 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3709]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1183905155 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3723]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1202907617 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3758]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1620112330 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3772]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 632841653 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3786]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1752365512 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3793]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1831705084 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3807]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1580874189 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3842]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 973692608 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3849]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1327539680 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3863]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 494414526 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3870]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1844942991 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3877]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 665988980 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3884]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 586917260 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3898]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 803768841 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3905]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 420993295 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3912]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1723848804 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3926]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 570422884 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3933]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 101162229 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3940]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 509806761 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3954]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1859928417 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3989]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 2017380745 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[3996]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 501036152 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4010]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1295225869 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4017]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1137667747 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4024]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 935722070 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4031]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 29369803 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4038]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1350720002 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4045]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1753259207 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4052]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1883237069 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4066]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 843149630 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4073]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1590404373 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](135 0 obj PDPage)/contentStream[0](136 0 obj PDContentStream)/operators[4080]/usedGlyphs[0](AAAABT+Exo2-Light AAAABT+Exo2-Light 33 0 1361921411 0 false)</context>
+              <errorMessage>The glyph can not be mapped to Unicode</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752704931974" finish="1752704934804">00:00:02.830</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752704931822" finish="1752704934899">00:00:03.077</duration>
+  </batchSummary>
+</report>

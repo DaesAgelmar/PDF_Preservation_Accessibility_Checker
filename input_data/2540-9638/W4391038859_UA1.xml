@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="1107522">
+        <name>/data/2540-9638/W4391038859.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="99" failedRules="7" passedChecks="61088" failedChecks="39">
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.1" testNumber="1" status="failed" failedChecks="4" tags="font">
+            <description>The font programs for all fonts used for rendering within a conforming file shall be embedded within that file, as defined in ISO 32000-1:2008, 9.9</description>
+            <object>PDFont</object>
+            <test>Subtype == "Type3" || Subtype == "Type0" || renderingMode == 3 || containsFontFile == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/operators[323]/font[0](Times New Roman,Bold)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/operators[335]/font[0](Times New Roman)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/operators[378]/font[0](Times New Roman,BoldItalic)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](5 0 obj PDPage)/contentStream[0](51 0 obj PDSemanticContentStream)/operators[727]/font[0](Times New Roman,Italic)</context>
+              <errorMessage>The font program is not embedded</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="43" status="failed" failedChecks="4" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan == null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[33](125 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns (4 and 2 respectively)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[58](738 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns (10 and 9 respectively)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[74](1036 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 14 span different number of columns (10 and 9 respectively)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[117](1687 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 6 span different number of columns (5 and 4 respectively)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="8" status="failed" failedChecks="1" tags="metadata">
+            <description>The Catalog dictionary of a conforming file shall contain the Metadata key whose value is a metadata stream as defined in ISO 32000-1:2008, 14.3.2. The metadata stream dictionary shall contain entry Type with value /Metadata and entry Subtype with value /XML</description>
+            <object>PDDocument</object>
+            <test>containsMetadata == true</test>
+            <check status="failed">
+              <context>root/document[0]</context>
+              <errorMessage>The document catalog dictionary doesn't contain metadata key or metadata stream dictionary does not contain either entry Type with value /Metadata or entry Subtype with value /XML</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="10" status="failed" failedChecks="21" tags="structure,table">
+            <description>TR element may contain only TH and TD elements</description>
+            <object>SETR</object>
+            <test>/^(TH|TD)(&amp;(TH|TD))*$/.test(kidsStandardTypes) || kidsStandardTypes == ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[33](125 0 obj SETable Table)/K[0](124 0 obj SETBody TBody)/K[0](123 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[33](125 0 obj SETable Table)/K[0](124 0 obj SETBody TBody)/K[1](140 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[33](125 0 obj SETable Table)/K[0](124 0 obj SETBody TBody)/K[3](155 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[57](189 0 obj SETable Table)/K[0](188 0 obj SETBody TBody)/K[0](187 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[57](189 0 obj SETable Table)/K[0](188 0 obj SETBody TBody)/K[1](216 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[57](189 0 obj SETable Table)/K[0](188 0 obj SETBody TBody)/K[2](227 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[57](189 0 obj SETable Table)/K[0](188 0 obj SETBody TBody)/K[25](711 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[58](738 0 obj SETable Table)/K[0](737 0 obj SETBody TBody)/K[0](736 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[58](738 0 obj SETable Table)/K[0](737 0 obj SETBody TBody)/K[2](781 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[73](825 0 obj SETable Table)/K[0](824 0 obj SETBody TBody)/K[0](823 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[73](825 0 obj SETable Table)/K[0](824 0 obj SETBody TBody)/K[2](862 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[74](1036 0 obj SETable Table)/K[0](1035 0 obj SETBody TBody)/K[13](1309 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[88](1355 0 obj SETable Table)/K[0](1354 0 obj SETBody TBody)/K[0](1353 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[88](1355 0 obj SETable Table)/K[0](1354 0 obj SETBody TBody)/K[2](1391 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[88](1355 0 obj SETable Table)/K[0](1354 0 obj SETBody TBody)/K[8](1518 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[108](1569 0 obj SETable Table)/K[0](1568 0 obj SETBody TBody)/K[0](1567 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[108](1569 0 obj SETable Table)/K[0](1568 0 obj SETBody TBody)/K[2](1605 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[108](1569 0 obj SETable Table)/K[0](1568 0 obj SETBody TBody)/K[4](1648 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[117](1687 0 obj SETable Table)/K[0](1686 0 obj SETBody TBody)/K[0](1685 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[117](1687 0 obj SETable Table)/K[0](1686 0 obj SETBody TBody)/K[1](1704 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[117](1687 0 obj SETable Table)/K[0](1686 0 obj SETBody TBody)/K[5](1749 0 obj SETR TR)</context>
+              <errorMessage>TR element contains Span element(s) instead of TH or TD</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="42" status="failed" failedChecks="4" tags="structure,table">
+            <description>Table rows shall have the same number of columns (taking into account column spans)</description>
+            <object>SETable</object>
+            <test>numberOfRowWithWrongColumnSpan == null || wrongColumnSpan != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[57](189 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[73](825 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[88](1355 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[108](1569 0 obj SETable Table)</context>
+              <errorMessage>Table rows 1 and 3 span different number of columns</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = null, DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="4" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[40](174 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[49](731 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[65](1029 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](3 0 obj PDStructTreeRoot)/K[0](53 0 obj SEPart Part)/K[81](1346 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752668601396" finish="1752668603955">00:00:02.559</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752668601227" finish="1752668604014">00:00:02.787</duration>
+  </batchSummary>
+</report>

@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="341902">
+        <name>/data/1988-2890/W4285814218.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="92" failedRules="14" passedChecks="69484" failedChecks="1037">
+          <rule specification="ISO 14289-1:2014" clause="7.18.1" testNumber="2" status="failed" failedChecks="1" tags="annotation,alt-text">
+            <description>An annotation (except Widget annotations or hidden annotations, or those having rectangle outside the crop-box) shall have either Contents key or an Alt entry in the enclosing structure element</description>
+            <object>PDAnnot</object>
+            <test>Subtype == 'Widget' || isOutsideCropBox == true || (F &amp; 2) == 2 || (Contents != null &amp;&amp; Contents != '') || (Alt != null &amp;&amp; Alt != '')</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/annots[0](451 0 obj PDLinkAnnot)</context>
+              <errorMessage>Link annotation whose hidden flag is not set and whose rectangle is not outside the crop-box has neither Contents key nor an Alt entry in the enclosing structure element</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.3" testNumber="1" status="failed" failedChecks="1" tags="page">
+            <description>Every page on which there is an annotation shall contain in its page dictionary the key Tabs, and its value shall be S</description>
+            <object>PDPage</object>
+            <test>containsAnnotations == false || Tabs == 'S'</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)</context>
+              <errorMessage>A page with annotation(s) contains Tabs key with value null instead of S</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="2" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/operators[28]/font[0](FEQNQN+TimesNewRomanPSMT)/DescendantFonts[0](FEQNQN+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](9 0 obj PDPage)/contentStream[0](10 0 obj PDSemanticContentStream)/operators[306]/font[0](LAQSWB+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](LAQSWB+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="21" status="failed" failedChecks="130" tags="structure,lang">
+            <description>Natural language for text in ActualText attribute shall be determined</description>
+            <object>PDStructElem</object>
+            <test>ActualText == null || containsLang == true || parentLang != null || gContainsCatalogLang == true</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[12](73 0 obj SEP Primer_parrafo)/K[0](331 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[12](73 0 obj SEP Primer_parrafo)/K[1](332 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[13](74 0 obj SEP Galerada-parrafos)/K[0](329 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[13](74 0 obj SEP Galerada-parrafos)/K[1](330 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[14](75 0 obj SEP Galerada-parrafos)/K[0](328 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[15](76 0 obj SEP Galerada-parrafos)/K[0](322 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[15](76 0 obj SEP Galerada-parrafos)/K[1](323 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[15](76 0 obj SEP Galerada-parrafos)/K[2](324 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[15](76 0 obj SEP Galerada-parrafos)/K[3](325 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[15](76 0 obj SEP Galerada-parrafos)/K[4](326 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[15](76 0 obj SEP Galerada-parrafos)/K[5](327 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[16](77 0 obj SEP Galerada-parrafos)/K[0](320 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[16](77 0 obj SEP Galerada-parrafos)/K[1](321 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[18](79 0 obj SEP Primer_parrafo)/K[0](316 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[18](79 0 obj SEP Primer_parrafo)/K[1](317 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[0](309 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[1](310 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[2](311 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[3](312 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[4](313 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[5](314 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[20](81 0 obj SEP Galerada-parrafos)/K[6](315 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[22](83 0 obj SENote Note)/K[0](306 0 obj SEP _000_Notas_al_pie)/K[1](308 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[4](274 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[10](280 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[13](283 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[15](285 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[19](289 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[24](294 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[23](84 0 obj SEP P)/K[33](303 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[0](263 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[1](264 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[2](265 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[3](266 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[4](267 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[5](268 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[24](85 0 obj SEP Galerada-parrafos)/K[6](269 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[27](88 0 obj SEP Primer_parrafo)/K[0](255 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[27](88 0 obj SEP Primer_parrafo)/K[1](256 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[27](88 0 obj SEP Primer_parrafo)/K[2](257 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[27](88 0 obj SEP Primer_parrafo)/K[3](258 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[27](88 0 obj SEP Primer_parrafo)/K[4](259 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[27](88 0 obj SEP Primer_parrafo)/K[5](260 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[0](241 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[1](242 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[2](243 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[3](244 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[4](245 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[5](246 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[6](247 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[7](248 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[8](249 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[9](250 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[10](251 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[11](252 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[12](253 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[29](90 0 obj SEP Primer_parrafo)/K[13](254 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[31](92 0 obj SEP Primer_parrafo)/K[0](238 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[31](92 0 obj SEP Primer_parrafo)/K[1](239 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[31](92 0 obj SEP Primer_parrafo)/K[2](240 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[32](93 0 obj SEP Galerada-parrafos)/K[0](234 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[32](93 0 obj SEP Galerada-parrafos)/K[1](235 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[32](93 0 obj SEP Galerada-parrafos)/K[2](236 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[32](93 0 obj SEP Galerada-parrafos)/K[3](237 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[0](227 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[1](228 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[2](229 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[3](230 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[4](231 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[5](232 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[34](95 0 obj SEP Primer_parrafo)/K[6](233 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[0](218 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[1](219 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[2](220 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[3](221 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[4](222 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[5](223 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[6](224 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[7](225 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[35](96 0 obj SEP Galerada-parrafos)/K[8](226 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[36](97 0 obj SEP Galerada-parrafos)/K[1](216 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[0](200 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[1](201 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[2](202 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[3](203 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[4](204 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[5](205 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[6](206 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[7](207 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[8](208 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[9](209 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[10](210 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[11](211 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[12](212 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[13](213 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[38](99 0 obj SEP Primer_parrafo)/K[14](214 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[39](100 0 obj SEP Galerada-parrafos)/K[0](194 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[39](100 0 obj SEP Galerada-parrafos)/K[1](195 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[39](100 0 obj SEP Galerada-parrafos)/K[2](196 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[39](100 0 obj SEP Galerada-parrafos)/K[3](197 0 obj SESpan Span)</context>
+              <errorMessage>Natural language for text in ActualText attribute cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="2" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[5](55 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[8](57 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="8" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[40]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[45]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[48]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[50]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[72]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[158]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDSemanticContentStream)/content[0]/contentItem[185]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](7 0 obj PDPage)/contentStream[0](8 0 obj PDSemanticContentStream)/content[0]/contentItem[95]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="30" status="failed" failedChecks="7" tags="lang,alt-text">
+            <description>Natural language for text in ActualText attribute in Span Marked Content shall be determined</description>
+            <object>SEMarkedContent</object>
+            <test>tag != 'Span' || ActualText == null || Lang != null || inheritedLang != null || gContainsCatalogLang == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[42]{mcid:4942}/contentItem[0]{mcid:4942}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[43]{mcid:4943}/contentItem[0]{mcid:4943}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[74]{mcid:5081}/contentItem[0]{mcid:5081}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[160]{mcid:5166}/contentItem[0]{mcid:5166}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDSemanticContentStream)/content[0]/contentItem[187]{mcid:5522}/contentItem[0]{mcid:5522}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](7 0 obj PDPage)/contentStream[0](8 0 obj PDSemanticContentStream)/content[0]/contentItem[97]{mcid:5616}/contentItem[0]{mcid:5616}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](7 0 obj PDPage)/contentStream[0](8 0 obj PDSemanticContentStream)/content[0]/contentItem[102]{mcid:5621}/contentItem[0]{mcid:5621}</context>
+              <errorMessage>Natural language for text in ActualText attribute in Span Marked Content cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="33" status="failed" failedChecks="2" tags="lang,metadata">
+            <description>Natural language for document metadata shall be determined</description>
+            <object>XMPLangAlt</object>
+            <test>xDefault == false || gContainsCatalogLang == true</test>
+            <check status="failed">
+              <context>root/indirectObjects[210](477 0)/directObject[0]/metadata[0](444 0 obj PDMetadata)/XMPPackage[0]/Properties[1](http://purl.org/dc/elements/1.1/ - dc:title)</context>
+              <errorMessage>Natural language for document metadata cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](29 0 obj PDMetadata)/XMPPackage[0]/Properties[5](http://purl.org/dc/elements/1.1/ - dc:description)</context>
+              <errorMessage>Natural language for document metadata cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = null, DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.9" testNumber="1" status="failed" failedChecks="6" tags="structure,note">
+            <description>Note tag shall have ID entry</description>
+            <object>SENote</object>
+            <test>noteID != null &amp;&amp; noteID != ''</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[10](71 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[22](83 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[25](86 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[40](101 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[45](106 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](41 0 obj PDStructTreeRoot)/K[0](43 0 obj SEDocument Document)/K[0](49 0 obj SEArt Article)/K[9](58 0 obj SESect Story)/K[46](107 0 obj SENote Note)</context>
+              <errorMessage>ID key of the Note tag is not present</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.2" testNumber="34" status="failed" failedChecks="874" tags="lang,text">
+            <description>Natural language for text in page content shall be determined</description>
+            <object>SETextItem</object>
+            <test>gContainsCatalogLang == true || Lang != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[0]{mcid:4901}/contentItem[0]{mcid:4901}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[1]{mcid:4902}/contentItem[0]{mcid:4902}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[2]{mcid:4903}/contentItem[0]{mcid:4903}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[3]{mcid:4904}/contentItem[0]{mcid:4904}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[4]{mcid:4905}/contentItem[0]{mcid:4905}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[5]{mcid:4906}/contentItem[0]{mcid:4906}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[6]{mcid:4907}/contentItem[0]{mcid:4907}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[7]{mcid:4908}/contentItem[0]{mcid:4908}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[8]{mcid:4909}/contentItem[0]{mcid:4909}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[9]{mcid:4910}/contentItem[0]{mcid:4910}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[10]{mcid:4911}/contentItem[0]{mcid:4911}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[11]{mcid:4912}/contentItem[0]{mcid:4912}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[12]{mcid:4913}/contentItem[0]{mcid:4913}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[12]{mcid:4913}/contentItem[1]{mcid:4913}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[13]{mcid:4914}/contentItem[0]{mcid:4914}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[14]{mcid:4915}/contentItem[0]{mcid:4915}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[15]{mcid:4916}/contentItem[0]{mcid:4916}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[26]{mcid:4927}/contentItem[0]{mcid:4927}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[27]{mcid:4928}/contentItem[0]{mcid:4928}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[28]{mcid:4929}/contentItem[0]{mcid:4929}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[29]{mcid:4930}/contentItem[0]{mcid:4930}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[30]{mcid:4931}/contentItem[0]{mcid:4931}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[31]{mcid:4932}/contentItem[0]{mcid:4932}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[32]{mcid:4933}/contentItem[0]{mcid:4933}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[33]{mcid:4934}/contentItem[0]{mcid:4934}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[34]{mcid:4935}/contentItem[0]{mcid:4935}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[35]{mcid:4936}/contentItem[0]{mcid:4936}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[36]{mcid:4937}/contentItem[0]{mcid:4937}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[37]{mcid:4938}/contentItem[0]{mcid:4938}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[38]{mcid:4939}/contentItem[0]{mcid:4939}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[39]{mcid:4940}/contentItem[0]{mcid:4940}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[41]{mcid:4941}/contentItem[0]{mcid:4941}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[42]{mcid:4942}/contentItem[0]{mcid:4942}/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[42]{mcid:4942}/contentItem[1]{mcid:4942}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[43]{mcid:4943}/contentItem[0]{mcid:4943}/contentItem[0]</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[43]{mcid:4943}/contentItem[1]{mcid:4943}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[44]{mcid:4944}/contentItem[0]{mcid:4944}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[49]{mcid:4947}/contentItem[0]{mcid:4947}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[51]{mcid:4948}/contentItem[0]{mcid:4948}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[52]{mcid:4949}/contentItem[0]{mcid:4949}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[53]{mcid:4950}/contentItem[0]{mcid:4950}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[54]{mcid:4951}/contentItem[0]{mcid:4951}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[55]{mcid:4952}/contentItem[0]{mcid:4952}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[56]{mcid:4953}/contentItem[0]{mcid:4953}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[57]{mcid:4954}/contentItem[0]{mcid:4954}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[58]{mcid:4955}/contentItem[0]{mcid:4955}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[59]{mcid:4956}/contentItem[0]{mcid:4956}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[60]{mcid:4957}/contentItem[0]{mcid:4957}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[61]{mcid:4958}/contentItem[0]{mcid:4958}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[62]{mcid:4959}/contentItem[0]{mcid:4959}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[63]{mcid:4960}/contentItem[0]{mcid:4960}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[64]{mcid:4961}/contentItem[0]{mcid:4961}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[65]{mcid:4962}/contentItem[0]{mcid:4962}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[66]{mcid:4963}/contentItem[0]{mcid:4963}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[67]{mcid:4964}/contentItem[0]{mcid:4964}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[68]{mcid:4965}/contentItem[0]{mcid:4965}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[69]{mcid:4966}/contentItem[0]{mcid:4966}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[70]{mcid:4967}/contentItem[0]{mcid:4967}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[71]{mcid:4968}/contentItem[0]{mcid:4968}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[72]{mcid:4969}/contentItem[0]{mcid:4969}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[73]{mcid:4970}/contentItem[0]{mcid:4970}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[74]{mcid:4971}/contentItem[0]{mcid:4971}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[75]{mcid:4972}/contentItem[0]{mcid:4972}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[76]{mcid:4973}/contentItem[0]{mcid:4973}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[77]{mcid:4974}/contentItem[0]{mcid:4974}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[78]{mcid:4975}/contentItem[0]{mcid:4975}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[79]{mcid:4976}/contentItem[0]{mcid:4976}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[80]{mcid:4977}/contentItem[0]{mcid:4977}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[81]{mcid:4978}/contentItem[0]{mcid:4978}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[82]{mcid:4979}/contentItem[0]{mcid:4979}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[83]{mcid:4980}/contentItem[0]{mcid:4980}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[84]{mcid:4981}/contentItem[0]{mcid:4981}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[85]{mcid:4982}/contentItem[0]{mcid:4982}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[86]{mcid:4983}/contentItem[0]{mcid:4983}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[87]{mcid:4984}/contentItem[0]{mcid:4984}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[88]{mcid:4985}/contentItem[0]{mcid:4985}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[89]{mcid:4986}/contentItem[0]{mcid:4986}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[90]{mcid:4987}/contentItem[0]{mcid:4987}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[91]{mcid:4988}/contentItem[0]{mcid:4988}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[92]{mcid:4989}/contentItem[0]{mcid:4989}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[93]{mcid:4990}/contentItem[0]{mcid:4990}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[94]{mcid:4991}/contentItem[0]{mcid:4991}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[95]{mcid:4992}/contentItem[0]{mcid:4992}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[96]{mcid:4993}/contentItem[0]{mcid:4993}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[97]{mcid:4994}/contentItem[0]{mcid:4994}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[98]{mcid:4995}/contentItem[0]{mcid:4995}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[99]{mcid:4996}/contentItem[0]{mcid:4996}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[100]{mcid:4997}/contentItem[0]{mcid:4997}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[101]{mcid:4998}/contentItem[0]{mcid:4998}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[102]{mcid:4999}/contentItem[0]{mcid:4999}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[103]{mcid:5000}/contentItem[0]{mcid:5000}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[104]{mcid:5001}/contentItem[0]{mcid:5001}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[105]{mcid:5002}/contentItem[0]{mcid:5002}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[106]{mcid:5003}/contentItem[0]{mcid:5003}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[107]{mcid:5004}/contentItem[0]{mcid:5004}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[108]{mcid:5005}/contentItem[0]{mcid:5005}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[109]{mcid:5006}/contentItem[0]{mcid:5006}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/contentStream[0]/content[0]/contentItem[110]{mcid:5007}/contentItem[0]{mcid:5007}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[0]{mcid:5008}/contentItem[0]{mcid:5008}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/content[0]/contentItem[1]{mcid:5009}/contentItem[0]{mcid:5009}</context>
+              <errorMessage>Natural language for text in page content cannot be determined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.10" testNumber="1" status="failed" failedChecks="1" tags="syntax">
+            <description>Each optional content configuration dictionary that forms the value of the D key, or that is an element in the array that forms the value of the Configs key in the OCProperties dictionary, shall contain the Name key</description>
+            <object>PDOCConfig</object>
+            <test>Name != null &amp;&amp; Name.length() &gt; 0</test>
+            <check status="failed">
+              <context>root/document[0]/OCProperties[0]/D[0]</context>
+              <errorMessage>Missing or empty Name entry of the optional content configuration dictionary</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](29 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.18.5" testNumber="2" status="failed" failedChecks="1" tags="structure,annotation,alt-text">
+            <description>Links shall contain an alternate description via their Contents key as described in ISO 32000-1:2008, 14.9.3</description>
+            <object>PDLinkAnnot</object>
+            <test>(Contents != null &amp;&amp; Contents != '') || isOutsideCropBox == true || (F &amp; 2) == 2</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](417 0 obj PDPage)/annots[0](451 0 obj PDLinkAnnot)</context>
+              <errorMessage>A link annotation does not include an alternate description in the Contents key</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752678278648" finish="1752678281125">00:00:02.477</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752678278515" finish="1752678281252">00:00:02.737</duration>
+  </batchSummary>
+</report>

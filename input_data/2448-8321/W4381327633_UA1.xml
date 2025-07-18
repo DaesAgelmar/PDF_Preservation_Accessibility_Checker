@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="872466">
+        <name>/data/2448-8321/W4381327633.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/UA-1 validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="100" failedRules="6" passedChecks="79910" failedChecks="94">
+          <rule specification="ISO 14289-1:2014" clause="7.21.4.2" testNumber="2" status="failed" failedChecks="2" tags="font">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[34]/font[0](ZIMFOJ+Garamond)/DescendantFonts[0](ZIMFOJ+Garamond)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](48 0 obj PDPage)/contentStream[0](49 0 obj PDSemanticContentStream)/operators[49]/font[0](ZIMFOJ+Garamond-Italic)/DescendantFonts[0](ZIMFOJ+Garamond-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="10" status="failed" failedChecks="1" tags="syntax">
+            <description>The document catalog dictionary shall include a ViewerPreferences dictionary containing a DisplayDocTitle key, whose value shall be true</description>
+            <object>CosDocument</object>
+            <test>DisplayDocTitle == true</test>
+            <check status="failed">
+              <context>root</context>
+              <errorMessage>ViewerPreferences dictionary is not present in the document Catalog, or DisplayDocTitle key is set to false or is not present in the ViewerPreferences dictionary (ViewerPreferences = dictionary(size = 1), DisplayDocTitle = null)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="5" testNumber="1" status="failed" failedChecks="1" tags="metadata">
+            <description>The PDF/UA version and conformance level of a file shall be specified using the PDF/UA Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFUAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](102 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/UA Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="5" status="failed" failedChecks="80" tags="structure">
+            <description>All non-standard structure types shall be mapped to the nearest functionally equivalent standard type, as defined in ISO 32000-1:2008, 14.8.4, in the role map dictionary of the structure tree root. This mapping may be indirect; within the role map a non-standard type can map directly to another non-standard type, but eventually the mapping shall terminate at a standard type</description>
+            <object>SENonStandard</object>
+            <test>isNotMappedToStandardType == false</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[0](166 0 obj SESect Story)/K[0](180 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[2](184 0 obj SENonStandard _0C_subtitulo__Abs_E)</context>
+              <errorMessage>Non-standard structure type _0C_subtitulo__Abs_E is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[13](195 0 obj SENonStandard _02_Texto_capitulare)</context>
+              <errorMessage>Non-standard structure type _02_Texto_capitulare is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[18](200 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[27](209 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[34](216 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[35](217 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[36](218 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[37](219 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[38](220 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[39](221 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[40](222 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[41](223 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[42](224 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[43](225 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[49](231 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[54](236 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[55](237 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[56](238 0 obj SENonStandard _09_Abando_N1__L._ó_)</context>
+              <errorMessage>Non-standard structure type _09_Abando_N1__L._Ã³_ is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[70](252 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[71](253 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[74](256 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[80](262 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[89](271 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[95](277 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[105](287 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[115](297 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[118](300 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[122](304 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[134](316 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[145](327 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[148](330 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[159](341 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[164](346 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[174](356 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[176](358 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[182](364 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[183](365 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[186](368 0 obj SENonStandard _01A_Subtitulo_bibli)</context>
+              <errorMessage>Non-standard structure type _01A_Subtitulo_bibli is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[187](369 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[188](370 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[189](371 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[190](372 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[191](373 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[192](374 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[193](375 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[194](376 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[195](377 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[196](378 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[197](379 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[198](380 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[199](381 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[200](382 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[201](383 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[202](127 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[203](128 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[204](130 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[205](132 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[206](134 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[207](136 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[208](137 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[209](140 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[210](142 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[211](143 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[212](144 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[213](146 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[214](148 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[215](149 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[216](151 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[217](153 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[218](155 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[219](157 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[220](158 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[221](384 0 obj SENonStandard _01B_Texto_Bibliogra)</context>
+              <errorMessage>Non-standard structure type _01B_Texto_Bibliogra is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[223](386 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[224](160 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[1](164 0 obj SESect Story)/K[225](163 0 obj SENonStandard _04_Texto_sin_sangri)</context>
+              <errorMessage>Non-standard structure type _04_Texto_sin_sangri is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[2](167 0 obj SESect Story)/K[0](175 0 obj SENonStandard _0H_Institucion_país)</context>
+              <errorMessage>Non-standard structure type _0H_Institucion_paÃ­s is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[2](167 0 obj SESect Story)/K[1](176 0 obj SENonStandard _0H_Institucion_país)</context>
+              <errorMessage>Non-standard structure type _0H_Institucion_paÃ­s is not mapped to a standard type</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[2](167 0 obj SESect Story)/K[2](177 0 obj SENonStandard _0H_Institucion_país)</context>
+              <errorMessage>Non-standard structure type _0H_Institucion_paÃ­s is not mapped to a standard type</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.1" testNumber="3" status="failed" failedChecks="3" tags="artifact">
+            <description>Content shall be marked as Artifact or tagged as real content</description>
+            <object>SESimpleContentItem</object>
+            <test>isTaggedContent == true || parentsTags.contains('Artifact') == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](585 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](617 0 obj PDSemanticContentStream)/content[20]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](62 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](3 0 obj PDPage)/contentStream[0](4 0 obj PDSemanticContentStream)/operators[3]/xObject[0]/contentStream[0](80 0 obj PDSemanticContentStream)/content[0]/contentItem[0]</context>
+              <errorMessage>Content is neither marked as Artifact nor tagged as real content</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 14289-1:2014" clause="7.3" testNumber="1" status="failed" failedChecks="7" tags="alt-text,structure,figure">
+            <description>Figure tags shall include an alternative representation or replacement text that represents the contents marked with the Figure tag as noted in ISO 32000-1:2008, 14.7.2, Table 323</description>
+            <object>SEFigure</object>
+            <test>(Alt != null &amp;&amp; Alt != '') || ActualText != null</test>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[3](168 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[4](169 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[5](170 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[6](171 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[7](172 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[8](173 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/StructTreeRoot[0](104 0 obj PDStructTreeRoot)/K[0](106 0 obj SEDocument Document)/K[0](165 0 obj SEArt Article)/K[9](174 0 obj SEFigure Figure)</context>
+              <errorMessage>Figure structure element neither has an alternate description nor a replacement text</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752666530880" finish="1752666533753">00:00:02.873</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752666530698" finish="1752666533847">00:00:03.149</duration>
+  </batchSummary>
+</report>
