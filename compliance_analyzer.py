@@ -14,6 +14,8 @@ import statistics
 from pathlib import Path
 from collections import Counter, defaultdict
 from dataclasses import asdict
+from typing import List, Dict, Optional, Any
+
 
 from tqdm import tqdm
 
@@ -198,7 +200,7 @@ class ComplianceAnalyzer:
 
         return analysis
 
-    def batch_analyze_articles(self, articles_data: List[ArticleComplianceData]) -> List[ComplianceAnalysis]:
+    def batch_analyze_articles(self, articles_data: List[ArticleComplianceData]) -> list[ComplianceAnalysis]:
         """Verilen tüm makaleleri toplu halde analiz eder."""
         self.logger.info(f"{len(articles_data)} adet makale için analiz başlatılıyor...")
         

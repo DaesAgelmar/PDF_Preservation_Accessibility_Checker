@@ -14,6 +14,7 @@ import json
 import logging
 import sys
 from pathlib import Path
+from dataclasses import asdict
 
 # Proje modüllerini import et
 try:
@@ -113,7 +114,7 @@ def main():
         )
         if articles_data:
             logger.info(f"Ayrıştırma tamamlandı. Ham veri '{raw_data_path}' dosyasına kaydediliyor...")
-            serializable_data = [article.__dict__ for article in articles_data]
+            serializable_data = [asdict(article) for article in articles_data]
             with open(raw_data_path, 'w', encoding='utf-8') as f:
                 json.dump(serializable_data, f, indent=2, ensure_ascii=False)
         else:
