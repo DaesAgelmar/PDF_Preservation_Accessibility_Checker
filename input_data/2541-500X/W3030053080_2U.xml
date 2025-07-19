@@ -1,0 +1,1333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<report>
+  <buildInformation>
+    <releaseDetails id="core" version="1.29.20" buildDate="2025-07-15T14:47:00Z"></releaseDetails>
+    <releaseDetails id="validation-model" version="1.29.65" buildDate="2025-07-15T14:48:00Z"></releaseDetails>
+    <releaseDetails id="gui" version="1.29.77" buildDate="2025-07-15T14:55:00Z"></releaseDetails>
+  </buildInformation>
+  <jobs>
+    <job>
+      <item size="13632095">
+        <name>/data/2541-500X/W3030053080.pdf</name>
+      </item>
+      <validationReport jobEndStatus="normal" profileName="PDF/A-2U validation profile" statement="PDF file is not compliant with Validation Profile requirements." isCompliant="false">
+        <details passedRules="139" failedRules="7" passedChecks="248126" failedChecks="1412">
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](1615 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="2">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[92]/font[0](ZZIIMV+TimesNewRomanPS-ItalicMT)/DescendantFonts[0](ZZIIMV+TimesNewRomanPS-ItalicMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[266]/font[0](WCYVWB+TimesNewRomanPSMT)/DescendantFonts[0](WCYVWB+TimesNewRomanPSMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="3" status="failed" failedChecks="812">
+            <description>DeviceCMYK shall only be used if a device independent DefaultCMYK colour space has been set or if a DeviceN-based DefaultCMYK colour space has been set when the DeviceCMYK colour space is used or the file has a PDF/A OutputIntent that contains a CMYK destination profile</description>
+            <object>PDDeviceCMYK</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "CMYK"</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[13]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[20]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[32]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[83]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/Group[0](160 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/Group[0](257 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[50]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[56]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[58]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[195]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[202]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/Group[0](337 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[63]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[66]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[72]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[78]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[84]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[20]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[26]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[33]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[39]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[45]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[72]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[76]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[84]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[92]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[100]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[107]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[114]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[121]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[128]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[135]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[142]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[149]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[156]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[163]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[170]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[177]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[184]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[191]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[198]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[206]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[214]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[222]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[229]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[244]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[250]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[258]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[266]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[274]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[281]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[288]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[295]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[311]/strokeCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/Group[0](1363 0 obj PDGroup)/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[75]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[80]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[16]/colorSpace[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[21]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[28]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[35]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[43]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[49]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[57]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[65]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[73]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[80]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[88]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[91]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[98]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[105]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[112]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[119]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[126]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[133]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[140]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[147]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[154]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[161]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[168]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[175]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[182]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[190]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[198]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[205]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[213]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[221]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[229]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[238]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[241]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[248]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[255]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[262]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[269]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[276]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[284]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[292]/fillCS[0]</context>
+              <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="2" status="failed" failedChecks="251">
+            <description>DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when the DeviceRGB colour space is used, or if the file has a PDF/A OutputIntent that contains an RGB destination profile</description>
+            <object>PDDeviceRGB</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "RGB "</test>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[26]/xObject[0](151 0 obj PDXImage)/imageCS[0](133 0 obj PDIndexed)/base[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](131 0 obj PDPage)/contentStream[0]/operators[42]/xObject[0](153 0 obj PDXImage)/imageCS[0](134 0 obj PDIndexed)/base[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[12]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[18]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[25]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[32]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[39]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[46]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[53]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[60]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[66]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[72]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[78]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[84]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[90]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[96]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[102]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[108]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[115]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[122]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[128]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[135]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[141]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[148]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[154]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](236 0 obj PDPage)/contentStream[0]/operators[164]/xObject[0](254 0 obj PDXImage)/imageCS[0](239 0 obj PDIndexed)/base[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[8]/xObject[0](330 0 obj PDXImage)/imageCS[0](313 0 obj PDIndexed)/base[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[63]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[66]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[73]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[79]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[85]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[91]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[98]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[105]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[112]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[119]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[125]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[132]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[139]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[145]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[146]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[153]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[161]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[169]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[176]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[183]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](310 0 obj PDPage)/contentStream[0]/operators[191]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[4]/xObject[0](1357 0 obj PDXImage)/imageCS[0](1349 0 obj PDIndexed)/base[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[9]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[18]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[25]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[33]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[41]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[47]/xObject[0](1359 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](1362 0 obj PDContentStream)/operators[57]/xObject[0](1361 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[50]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[53]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[58]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[60]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[65]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[67]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[234]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[239]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[4]/xObject[0](393 0 obj PDXImage)/imageCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[9]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[18]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[25]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[31]/xObject[0](396 0 obj PDXImage)/imageCS[0](399 0 obj PDIndexed)/base[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](390 0 obj PDContentStream)/operators[70]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](406 0 obj PDContentStream)/operators[9]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](406 0 obj PDContentStream)/operators[18]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](406 0 obj PDContentStream)/operators[25]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](406 0 obj PDContentStream)/operators[33]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](406 0 obj PDContentStream)/operators[41]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[12]/xObject[0]/contentStream[0](406 0 obj PDContentStream)/operators[86]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[14]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[20]/strokeCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[26]/strokeCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[47]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[51]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[57]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[249]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[252]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](350 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](350 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](353 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](353 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](356 0 obj PDPage)/contentStream[0]/operators[2]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](356 0 obj PDPage)/contentStream[0]/operators[6]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.10" testNumber="2" status="failed" failedChecks="2">
+            <description>If the document does not contain a PDF/A OutputIntent, then all Page objects that contain transparency shall include the Group key, and the attribute dictionary that forms the value of that Group key shall include a CS entry whose value shall be used as the default blending colour space</description>
+            <object>PDPage</object>
+            <test>gOutputCS != null || containsGroupCS == true || containsTransparency == false</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)</context>
+              <errorMessage>The page contains transparent objects with no blending colour space defined</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[19](1532 0 obj PDPage)</context>
+              <errorMessage>The page contains transparent objects with no blending colour space defined</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.5" testNumber="1" status="failed" failedChecks="331">
+            <description>For every font embedded in a conforming file and used for rendering, the glyph width information in the font dictionary and in the embedded font program shall be consistent</description>
+            <object>Glyph</object>
+            <test>renderingMode == 3 || widthFromFontProgram == null || widthFromDictionary == null || Math.abs(widthFromFontProgram - widthFromDictionary) &lt;= 1</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[74]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 12 7  0 false)</context>
+              <errorMessage>Glyph width 339.84375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[78]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 13 7  0 false)</context>
+              <errorMessage>Glyph width 312.5 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[86]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 11 7  0 false)</context>
+              <errorMessage>Glyph width 791.015625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[96]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 25 7  0 false)</context>
+              <errorMessage>Glyph width 670.8984375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[100]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 145 7  0 false)</context>
+              <errorMessage>Glyph width 540.52734375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[104]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 142 7  0 false)</context>
+              <errorMessage>Glyph width 280.76171875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[108]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 151 7  0 false)</context>
+              <errorMessage>Glyph width 569.3359375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[112]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 143 7  0 false)</context>
+              <errorMessage>Glyph width 866.2109375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[116]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 135 7  0 false)</context>
+              <errorMessage>Glyph width 479.00390625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[120]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 3 7  0 false)</context>
+              <errorMessage>Glyph width 250.9765625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[124]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 864 7  0 false)</context>
+              <errorMessage>Glyph width 530.76171875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[134]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 17 7  0 false)</context>
+              <errorMessage>Glyph width 749.0234375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[146]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 132 7  0 false)</context>
+              <errorMessage>Glyph width 557.12890625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[154]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 148 7  0 false)</context>
+              <errorMessage>Glyph width 383.30078125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[162]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 862 7  0 false)</context>
+              <errorMessage>Glyph width 484.375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[172]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 146 7  0 false)</context>
+              <errorMessage>Glyph width 559.5703125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[180]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 484 7  0 false)</context>
+              <errorMessage>Glyph width 255.859375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[188]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 867 7  0 false)</context>
+              <errorMessage>Glyph width 483.3984375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[192]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 865 7  0 false)</context>
+              <errorMessage>Glyph width 475.5859375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[200]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 486 7  0 false)</context>
+              <errorMessage>Glyph width 359.375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[208]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 861 7  0 false)</context>
+              <errorMessage>Glyph width 312.98828125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[216]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 863 7  0 false)</context>
+              <errorMessage>Glyph width 456.54296875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[226]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 16 7  0 false)</context>
+              <errorMessage>Glyph width 905.2734375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[230]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 131 7  0 false)</context>
+              <errorMessage>Glyph width 479.98046875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[234]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 155 7  0 false)</context>
+              <errorMessage>Glyph width 481.4453125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[246]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 860 7  0 false)</context>
+              <errorMessage>Glyph width 538.57421875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[276]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 22 7  0 false)</context>
+              <errorMessage>Glyph width 509.765625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[292]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 483 7  0 false)</context>
+              <errorMessage>Glyph width 255.859375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[332]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 27 7  0 false)</context>
+              <errorMessage>Glyph width 657.2265625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[342]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 26 7  0 false)</context>
+              <errorMessage>Glyph width 980.95703125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[346]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 135 7  0 false)</context>
+              <errorMessage>Glyph width 537.59765625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[350]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 132 7  0 false)</context>
+              <errorMessage>Glyph width 608.88671875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[354]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 149 7  0 false)</context>
+              <errorMessage>Glyph width 456.54296875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[358]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 139 7  0 false)</context>
+              <errorMessage>Glyph width 331.54296875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[362]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 150 7  0 false)</context>
+              <errorMessage>Glyph width 389.6484375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[370]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 3 7  0 false)</context>
+              <errorMessage>Glyph width 239.2578125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[374]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 483 7  0 false)</context>
+              <errorMessage>Glyph width 286.1328125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[382]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 138 7  0 false)</context>
+              <errorMessage>Glyph width 579.58984375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[386]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 150 7  0 false)</context>
+              <errorMessage>Glyph width 353.02734375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[402]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 512 7  0 false)</context>
+              <errorMessage>Glyph width 402.83203125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[410]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 140 7  0 false)</context>
+              <errorMessage>Glyph width 265.13671875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[426]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 144 7  0 false)</context>
+              <errorMessage>Glyph width 582.03125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[446]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 139 7  0 false)</context>
+              <errorMessage>Glyph width 283.203125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[458]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 141 7  0 false)</context>
+              <errorMessage>Glyph width 534.66796875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[474]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 133 7  0 false)</context>
+              <errorMessage>Glyph width 461.42578125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[486]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 134 7  0 false)</context>
+              <errorMessage>Glyph width 567.3828125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[510]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 154 7  0 false)</context>
+              <errorMessage>Glyph width 480.46875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[542]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 149 7  0 false)</context>
+              <errorMessage>Glyph width 404.78515625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[578]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 513 7  0 false)</context>
+              <errorMessage>Glyph width 352.5390625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[590]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 8 7  0 false)</context>
+              <errorMessage>Glyph width 602.05078125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[594]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 143 7  0 false)</context>
+              <errorMessage>Glyph width 936.03515625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[598]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 131 7  0 false)</context>
+              <errorMessage>Glyph width 535.64453125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[606]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 142 7  0 false)</context>
+              <errorMessage>Glyph width 329.1015625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[690]/usedGlyphs[0](TKPZUZ+Constantia TKPZUZ+Constantia 831 7  0 false)</context>
+              <errorMessage>Glyph width 843.26171875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[748]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 22 7  0 false)</context>
+              <errorMessage>Glyph width 527.34375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[752]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 155 7  0 false)</context>
+              <errorMessage>Glyph width 512.20703125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[760]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 148 7  0 false)</context>
+              <errorMessage>Glyph width 434.08203125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[768]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 136 7  0 false)</context>
+              <errorMessage>Glyph width 354.00390625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[776]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 11 7  0 false)</context>
+              <errorMessage>Glyph width 827.63671875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[784]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 134 7  0 false)</context>
+              <errorMessage>Glyph width 620.1171875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[804]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 151 7  0 false)</context>
+              <errorMessage>Glyph width 626.953125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[820]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 138 7  0 false)</context>
+              <errorMessage>Glyph width 637.20703125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[852]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 12 7  0 false)</context>
+              <errorMessage>Glyph width 390.625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[876]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 133 7  0 false)</context>
+              <errorMessage>Glyph width 484.375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[884]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 24 7  0 false)</context>
+              <errorMessage>Glyph width 766.6015625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[888]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 144 7  0 false)</context>
+              <errorMessage>Glyph width 639.6484375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[896]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 152 7  0 false)</context>
+              <errorMessage>Glyph width 518.06640625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[924]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 481 7  0 false)</context>
+              <errorMessage>Glyph width 286.1328125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[932]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 13 7  0 false)</context>
+              <errorMessage>Glyph width 363.28125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[940]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 141 7  0 false)</context>
+              <errorMessage>Glyph width 609.375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[980]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 145 7  0 false)</context>
+              <errorMessage>Glyph width 598.6328125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1010]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 19 7  0 false)</context>
+              <errorMessage>Glyph width 641.6015625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1062]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 9 7  0 false)</context>
+              <errorMessage>Glyph width 562.98828125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1106]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 4 7  0 false)</context>
+              <errorMessage>Glyph width 669.43359375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1188]/usedGlyphs[0](SKPZUZ+Constantia-Bold SKPZUZ+Constantia-Bold 25 7  0 false)</context>
+              <errorMessage>Glyph width 663.0859375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1192]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 82 7  0 false)</context>
+              <errorMessage>Glyph width 450 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1196]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 79 7  0 false)</context>
+              <errorMessage>Glyph width 220 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1200]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 3 7  0 false)</context>
+              <errorMessage>Glyph width 250 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1204]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 23 7  0 false)</context>
+              <errorMessage>Glyph width 480 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1208]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 15 7  0 false)</context>
+              <errorMessage>Glyph width 240 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1216]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 49 7  0 false)</context>
+              <errorMessage>Glyph width 822 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1220]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 88 7  0 false)</context>
+              <errorMessage>Glyph width 490 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1224]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 80 7  0 false)</context>
+              <errorMessage>Glyph width 681 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1228]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 69 7  0 false)</context>
+              <errorMessage>Glyph width 370 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1232]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 72 7  0 false)</context>
+              <errorMessage>Glyph width 414 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1236]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 85 7  0 false)</context>
+              <errorMessage>Glyph width 402 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1244]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 21 7  0 false)</context>
+              <errorMessage>Glyph width 424 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1256]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 48 7  0 false)</context>
+              <errorMessage>Glyph width 974 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1260]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 68 7  0 false)</context>
+              <errorMessage>Glyph width 462 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1264]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 92 7  0 false)</context>
+              <errorMessage>Glyph width 467 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1276]/usedGlyphs[0](TKPZUZ+BlackChancery TKPZUZ+BlackChancery 19 7  0 false)</context>
+              <errorMessage>Glyph width 450 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1294]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 16 7  0 false)</context>
+              <errorMessage>Glyph width 892.08984375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1298]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 151 7  0 false)</context>
+              <errorMessage>Glyph width 556.15234375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1302]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 138 7  0 false)</context>
+              <errorMessage>Glyph width 550.29296875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1306]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 131 7  0 false)</context>
+              <errorMessage>Glyph width 513.671875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1310]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 143 7  0 false)</context>
+              <errorMessage>Glyph width 834.47265625 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1322]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 134 7  0 false)</context>
+              <errorMessage>Glyph width 518.5546875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1326]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 3 7  0 false)</context>
+              <errorMessage>Glyph width 235.83984375 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1330]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 9 7  0 false)</context>
+              <errorMessage>Glyph width 528.3203125 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](16 0 obj PDPage)/contentStream[0]/operators[1338]/usedGlyphs[0](SKPZUZ+Constantia-Italic SKPZUZ+Constantia-Italic 148 7  0 false)</context>
+              <errorMessage>Glyph width 386.71875 in the embedded font program is not consistent with the Widths entry of the font dictionary (value 1000)</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="4" status="failed" failedChecks="13">
+            <description>DeviceGray shall only be used if a device independent DefaultGray colour space has been set when the DeviceGray colour space is used, or if a PDF/A OutputIntent is present</description>
+            <object>PDDeviceGray</object>
+            <test>gOutputCS != null</test>
+            <check status="failed">
+              <context>root/document[0]/pages[4](1297 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[5](341 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[6](344 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[7](347 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[8](350 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[9](353 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](356 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[11](362 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[12](372 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[13](375 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[14](378 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[15](381 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[16](384 0 obj PDPage)/contentStream[0]/operators[10]/colorSpace[0]</context>
+              <errorMessage>DeviceGray colour space is used without output intent profile</errorMessage>
+            </check>
+          </rule>
+        </details>
+      </validationReport>
+      <duration start="1752916213508" finish="1752916217628">00:00:04.120</duration>
+    </job>
+  </jobs>
+  <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
+    <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
+    <featureReports failedJobs="0">0</featureReports>
+    <repairReports failedJobs="0">0</repairReports>
+    <duration start="1752916213361" finish="1752916217742">00:00:04.381</duration>
+  </batchSummary>
+</report>

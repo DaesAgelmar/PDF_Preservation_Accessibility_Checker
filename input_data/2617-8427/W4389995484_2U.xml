@@ -21,6 +21,70 @@
               <errorMessage>The XMP package uses encoding null different from UTF-8</errorMessage>
             </check>
           </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="4" status="failed" failedChecks="1">
+            <description>All metadata streams present in the PDF shall conform to the XMP Specification. All content of all XMP packets shall be well-formed, as defined by Extensible Markup Language (XML) 1.0 (Third Edition), 2.1, and the RDF/XML Syntax Specification (Revised)</description>
+            <object>XMPPackage</object>
+            <test>isSerializationValid</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](43 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>A metadata stream is serialized incorrectly and can not be parsed</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
+            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
+            <object>MainXMPPackage</object>
+            <test>containsPDFAIdentification == true</test>
+            <check status="failed">
+              <context>root/document[0]/metadata[0](43 0 obj PDMetadata)/XMPPackage[0]</context>
+              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="2" status="failed" failedChecks="8">
+            <description>DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when the DeviceRGB colour space is used, or if the file has a PDF/A OutputIntent that contains an RGB destination profile</description>
+            <object>PDDeviceRGB</object>
+            <test>gOutputCS != null &amp;&amp; gOutputCS == "RGB "</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](903 0 obj PDPage)/contentStream[0]/operators[13]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](903 0 obj PDPage)/contentStream[0]/operators[16]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[209]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[211]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[368]/colorSpace[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[371]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[376]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[381]/fillCS[0]</context>
+              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.1.3" testNumber="2" status="failed" failedChecks="1">
+            <description>The keyword Encrypt shall not be used in the trailer dictionary</description>
+            <object>CosTrailer</object>
+            <test>isEncrypted != true</test>
+            <check status="failed">
+              <context>root/trailer[0]</context>
+              <errorMessage>Encrypt keyword is present in the trailer dictionary</errorMessage>
+            </check>
+          </rule>
           <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="5">
             <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
             <object>PDCIDFont</object>
@@ -44,15 +108,6 @@
             <check status="failed">
               <context>root/document[0]/pages[7](13 0 obj PDPage)/contentStream[0](14 0 obj PDContentStream)/operators[34]/font[0](XOZFGU+SymbolMT)/DescendantFonts[0](XOZFGU+SymbolMT)</context>
               <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-          </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="4" status="failed" failedChecks="1">
-            <description>All metadata streams present in the PDF shall conform to the XMP Specification. All content of all XMP packets shall be well-formed, as defined by Extensible Markup Language (XML) 1.0 (Third Edition), 2.1, and the RDF/XML Syntax Specification (Revised)</description>
-            <object>XMPPackage</object>
-            <test>isSerializationValid</test>
-            <check status="failed">
-              <context>root/document[0]/metadata[0](43 0 obj PDMetadata)/XMPPackage[0]</context>
-              <errorMessage>A metadata stream is serialized incorrectly and can not be parsed</errorMessage>
             </check>
           </rule>
           <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="3" status="failed" failedChecks="1595">
@@ -460,70 +515,15 @@
               <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
             </check>
           </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="2" status="failed" failedChecks="8">
-            <description>DeviceRGB shall only be used if a device independent DefaultRGB colour space has been set when the DeviceRGB colour space is used, or if the file has a PDF/A OutputIntent that contains an RGB destination profile</description>
-            <object>PDDeviceRGB</object>
-            <test>gOutputCS != null &amp;&amp; gOutputCS == "RGB "</test>
-            <check status="failed">
-              <context>root/document[0]/pages[0](903 0 obj PDPage)/contentStream[0]/operators[13]/colorSpace[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[0](903 0 obj PDPage)/contentStream[0]/operators[16]/fillCS[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[209]/colorSpace[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[1](1 0 obj PDPage)/contentStream[0](2 0 obj PDContentStream)/operators[211]/fillCS[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[368]/colorSpace[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[371]/fillCS[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[376]/fillCS[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[3](5 0 obj PDPage)/contentStream[0](6 0 obj PDContentStream)/operators[381]/fillCS[0]</context>
-              <errorMessage>DeviceRGB colour space is used without RGB output intent profile</errorMessage>
-            </check>
-          </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.1.3" testNumber="2" status="failed" failedChecks="1">
-            <description>The keyword Encrypt shall not be used in the trailer dictionary</description>
-            <object>CosTrailer</object>
-            <test>isEncrypted != true</test>
-            <check status="failed">
-              <context>root/trailer[0]</context>
-              <errorMessage>Encrypt keyword is present in the trailer dictionary</errorMessage>
-            </check>
-          </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.6.4" testNumber="1" status="failed" failedChecks="1">
-            <description>The PDF/A version and conformance level of a file shall be specified using the PDF/A Identification extension schema</description>
-            <object>MainXMPPackage</object>
-            <test>containsPDFAIdentification == true</test>
-            <check status="failed">
-              <context>root/document[0]/metadata[0](43 0 obj PDMetadata)/XMPPackage[0]</context>
-              <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
-            </check>
-          </rule>
         </details>
       </validationReport>
-      <duration start="1752705742689" finish="1752705745769">00:00:03.080</duration>
+      <duration start="1752916812587" finish="1752916815140">00:00:02.553</duration>
     </job>
   </jobs>
   <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
     <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
     <featureReports failedJobs="0">0</featureReports>
     <repairReports failedJobs="0">0</repairReports>
-    <duration start="1752705742494" finish="1752705745847">00:00:03.353</duration>
+    <duration start="1752916812431" finish="1752916815196">00:00:02.765</duration>
   </batchSummary>
 </report>

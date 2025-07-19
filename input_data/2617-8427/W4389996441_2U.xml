@@ -21,13 +21,42 @@
               <errorMessage>The document metadata stream doesn't contain PDF/A Identification Schema</errorMessage>
             </check>
           </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="4" status="failed" failedChecks="1">
-            <description>All metadata streams present in the PDF shall conform to the XMP Specification. All content of all XMP packets shall be well-formed, as defined by Extensible Markup Language (XML) 1.0 (Third Edition), 2.1, and the RDF/XML Syntax Specification (Revised)</description>
+          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="6">
+            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
+            <object>PDCIDFont</object>
+            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
+            <check status="failed">
+              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](976 0 obj PDContentStream)/operators[13]/font[0](MNMRIQ+PTSerif-Regular)/DescendantFonts[0](MNMRIQ+PTSerif-Regular)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[24]/font[0](XOZFGU+PTSerif-BoldItalic)/DescendantFonts[0](XOZFGU+PTSerif-BoldItalic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[29]/font[0](MNMRIQ+PTSerif-Italic)/DescendantFonts[0](MNMRIQ+PTSerif-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[100]/font[0](CQOJYK+PTSerif-Bold)/DescendantFonts[0](CQOJYK+PTSerif-Bold)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[2](6 0 obj PDPage)/contentStream[0](7 0 obj PDContentStream)/operators[212]/font[0](XOZFGU+SymbolMT)/DescendantFonts[0](XOZFGU+SymbolMT)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+            <check status="failed">
+              <context>root/document[0]/pages[10](22 0 obj PDPage)/contentStream[0](23 0 obj PDContentStream)/operators[262]/font[0](XPMSOO+PTSerif-Italic)/DescendantFonts[0](XPMSOO+PTSerif-Italic)</context>
+              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
+            </check>
+          </rule>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="5" status="failed" failedChecks="1">
+            <description>All metadata streams present in the PDF shall conform to the XMP Specification. The XMP package must be encoded as UTF-8</description>
             <object>XMPPackage</object>
-            <test>isSerializationValid</test>
+            <test>actualEncoding == "UTF-8"</test>
             <check status="failed">
               <context>root/document[0]/metadata[0](48 0 obj PDMetadata)/XMPPackage[0]</context>
-              <errorMessage>A metadata stream is serialized incorrectly and can not be parsed</errorMessage>
+              <errorMessage>The XMP package uses encoding null different from UTF-8</errorMessage>
             </check>
           </rule>
           <rule specification="ISO 19005-2:2011" clause="6.2.4.3" testNumber="3" status="failed" failedChecks="1320">
@@ -435,42 +464,13 @@
               <errorMessage>DeviceCMYK colour space is used without CMYK output intent profile</errorMessage>
             </check>
           </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.2.11.4.2" testNumber="2" status="failed" failedChecks="6">
-            <description>If the FontDescriptor dictionary of an embedded CID font contains a CIDSet stream, then it shall identify all CIDs which are present in the font program, regardless of whether a CID in the font is referenced or used by the PDF or not</description>
-            <object>PDCIDFont</object>
-            <test>containsFontFile == false || fontName.search(/[A-Z]{6}\+/) != 0 || containsCIDSet == false || cidSetListsAllGlyphs == true</test>
-            <check status="failed">
-              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[2]/xObject[0]/contentStream[0](976 0 obj PDContentStream)/operators[13]/font[0](MNMRIQ+PTSerif-Regular)/DescendantFonts[0](MNMRIQ+PTSerif-Regular)</context>
-              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[24]/font[0](XOZFGU+PTSerif-BoldItalic)/DescendantFonts[0](XOZFGU+PTSerif-BoldItalic)</context>
-              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[29]/font[0](MNMRIQ+PTSerif-Italic)/DescendantFonts[0](MNMRIQ+PTSerif-Italic)</context>
-              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[0](951 0 obj PDPage)/contentStream[0]/operators[100]/font[0](CQOJYK+PTSerif-Bold)/DescendantFonts[0](CQOJYK+PTSerif-Bold)</context>
-              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[2](6 0 obj PDPage)/contentStream[0](7 0 obj PDContentStream)/operators[212]/font[0](XOZFGU+SymbolMT)/DescendantFonts[0](XOZFGU+SymbolMT)</context>
-              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-            <check status="failed">
-              <context>root/document[0]/pages[10](22 0 obj PDPage)/contentStream[0](23 0 obj PDContentStream)/operators[262]/font[0](XPMSOO+PTSerif-Italic)/DescendantFonts[0](XPMSOO+PTSerif-Italic)</context>
-              <errorMessage>A CIDSet entry in the Font descriptor does not correctly identify all glyphs present in the embedded font subset</errorMessage>
-            </check>
-          </rule>
-          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="5" status="failed" failedChecks="1">
-            <description>All metadata streams present in the PDF shall conform to the XMP Specification. The XMP package must be encoded as UTF-8</description>
+          <rule specification="ISO 19005-2:2011" clause="6.6.2.1" testNumber="4" status="failed" failedChecks="1">
+            <description>All metadata streams present in the PDF shall conform to the XMP Specification. All content of all XMP packets shall be well-formed, as defined by Extensible Markup Language (XML) 1.0 (Third Edition), 2.1, and the RDF/XML Syntax Specification (Revised)</description>
             <object>XMPPackage</object>
-            <test>actualEncoding == "UTF-8"</test>
+            <test>isSerializationValid</test>
             <check status="failed">
               <context>root/document[0]/metadata[0](48 0 obj PDMetadata)/XMPPackage[0]</context>
-              <errorMessage>The XMP package uses encoding null different from UTF-8</errorMessage>
+              <errorMessage>A metadata stream is serialized incorrectly and can not be parsed</errorMessage>
             </check>
           </rule>
           <rule specification="ISO 19005-2:2011" clause="6.1.3" testNumber="2" status="failed" failedChecks="1">
@@ -484,13 +484,13 @@
           </rule>
         </details>
       </validationReport>
-      <duration start="1752705829249" finish="1752705831914">00:00:02.665</duration>
+      <duration start="1752917078989" finish="1752917081842">00:00:02.853</duration>
     </job>
   </jobs>
   <batchSummary totalJobs="1" failedToParse="0" encrypted="0" outOfMemory="0" veraExceptions="0">
     <validationReports compliant="0" nonCompliant="1" failedJobs="0">1</validationReports>
     <featureReports failedJobs="0">0</featureReports>
     <repairReports failedJobs="0">0</repairReports>
-    <duration start="1752705829056" finish="1752705831984">00:00:02.928</duration>
+    <duration start="1752917078812" finish="1752917082022">00:00:03.210</duration>
   </batchSummary>
 </report>
